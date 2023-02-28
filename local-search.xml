@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>lxd常用脚本记录</title>
+    <link href="/2023/02/28/lxc/"/>
+    <url>/2023/02/28/lxc/</url>
+    
+    <content type="html"><![CDATA[<h1 id="lxc">lxc</h1><h2 id="常用命令">常用命令</h2><p>查看已有的镜像</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo lxc list<br></code></pre></td></tr></table></figure><p>删除快照（保证容器在运行）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">lxc delete name<br></code></pre></td></tr></table></figure><p>自动化镜像bash</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">!/bin/bash</span><br>passwd=&#x27;1234&#x27;<br><br>read -p &quot;Enter your full name as the container name, such as zhangsan: &quot; name<br><br>echo &quot;Create the container $name...&quot;<br>echo $passwd | sudo -S lxc copy temp $name<br><br>echo &quot;Start the container $name...&quot;<br>echo $passwd | sudo -S lxc start $name<br><br>sudo -S lxc exec $name -- /bin/bash<br><br></code></pre></td></tr></table></figure><p>自动配置lxc</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs shell">groupmod -n $last_name temp<br><br>echo &quot;Change IP to $IP&quot;<br>mv /etc/netplan/50-cloud-init.yaml /etc/netplan/50-cloud-init.yaml.bak<br>echo &quot;network:<br>  version: 2<br>  ethernets:<br>    eth0:<br>      dhcp4: no<br>      dhcp6: no<br>      addresses:<br>        - $IP/24<br>      gateway4: 125.221.232.1<br>      nameservers:<br>        addresses:<br>          - 255.255.255.0<br>          - 218.75.247.245&quot; &gt; /etc/netplan/50-cloud-init.yaml<br><br>netplan --debug apply<br><br>echo &quot;$last_name:$password&quot; | sudo chpasswd<br><br>reboot<br></code></pre></td></tr></table></figure><p>ref：https://xungejiang.com/2022/07/14/lxd-new/</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>环境搭建</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>数字三角形</title>
     <link href="/2022/09/21/20220921/"/>
     <url>/2022/09/21/20220921/</url>

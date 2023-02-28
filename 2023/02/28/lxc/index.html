@@ -16,22 +16,22 @@
   <meta name="author" content="Zs">
   <meta name="keywords" content="">
   
-    <meta name="description" content="[USACO1.5][IOI1994]数字三角形 Number Triangles 题目描述 观察下面的数字金字塔。 写一个程序来查找从最高点到底部任意处结束的路径，使路径经过数字的和最大。每一步可以走到左下方的点也可以到达右下方的点。 12345        7       3   8     8   1   0   2   7   4   4 4   5   2   6   5  在上面的样">
+    <meta name="description" content="lxc 常用命令 查看已有的镜像 1sudo lxc list 删除快照（保证容器在运行） 1lxc delete name 自动化镜像bash 12345678910111213# !&#x2F;bin&#x2F;bashpasswd&#x3D;&amp;#x27;1234&amp;#x27;read -p &quot;Enter your full name as the container name, such as zhangsan:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数字三角形">
-<meta property="og:url" content="http://lianouxianjz.github.io/2022/09/21/20220921/index.html">
+<meta property="og:title" content="lxd常用脚本记录">
+<meta property="og:url" content="http://lianouxianjz.github.io/2023/02/28/lxc/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="[USACO1.5][IOI1994]数字三角形 Number Triangles 题目描述 观察下面的数字金字塔。 写一个程序来查找从最高点到底部任意处结束的路径，使路径经过数字的和最大。每一步可以走到左下方的点也可以到达右下方的点。 12345        7       3   8     8   1   0   2   7   4   4 4   5   2   6   5  在上面的样">
+<meta property="og:description" content="lxc 常用命令 查看已有的镜像 1sudo lxc list 删除快照（保证容器在运行） 1lxc delete name 自动化镜像bash 12345678910111213# !&#x2F;bin&#x2F;bashpasswd&#x3D;&amp;#x27;1234&amp;#x27;read -p &quot;Enter your full name as the container name, such as zhangsan:">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-09-21T14:32:08.276Z">
-<meta property="article:modified_time" content="2023-01-16T03:42:44.234Z">
+<meta property="article:published_time" content="2023-02-28T03:21:09.217Z">
+<meta property="article:modified_time" content="2023-02-28T03:23:55.934Z">
 <meta property="article:author" content="Zs">
-<meta property="article:tag" content="线性DP">
+<meta property="article:tag" content="环境搭建">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>数字三角形 - Hexo</title>
+  <title>lxd常用脚本记录 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="数字三角形"></span>
+            <span id="subtitle" data-typed-text="lxd常用脚本记录"></span>
           
         </div>
 
@@ -207,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-09-21 22:32" pubdate>
-          2022年9月21日 晚上
+        <time datetime="2023-02-28 11:21" pubdate>
+          2023年2月28日 上午
         </time>
       </span>
     
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          837 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          11 分钟
+          7 分钟
         
       </span>
     
@@ -268,59 +268,22 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">数字三角形</h1>
+            <h1 style="display: none">lxd常用脚本记录</h1>
             
             
               <div class="markdown-body">
                 
-                <h2
-id="usaco1.5ioi1994数字三角形-number-triangles">[USACO1.5][IOI1994]数字三角形
-Number Triangles</h2>
-<h2 id="题目描述">题目描述</h2>
-<p>观察下面的数字金字塔。</p>
-<p>写一个程序来查找从最高点到底部任意处结束的路径，使路径经过数字的和最大。每一步可以走到左下方的点也可以到达右下方的点。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs cpp">        <span class="hljs-number">7</span> <br>      <span class="hljs-number">3</span>   <span class="hljs-number">8</span> <br>    <span class="hljs-number">8</span>   <span class="hljs-number">1</span>   <span class="hljs-number">0</span> <br>  <span class="hljs-number">2</span>   <span class="hljs-number">7</span>   <span class="hljs-number">4</span>   <span class="hljs-number">4</span> <br><span class="hljs-number">4</span>   <span class="hljs-number">5</span>   <span class="hljs-number">2</span>   <span class="hljs-number">6</span>   <span class="hljs-number">5</span> <br></code></pre></td></tr></table></figure>
-<p>在上面的样例中,从 <span class="math inline">\(7 \to 3 \to 8 \to 7 \to
-5\)</span> 的路径产生了最大</p>
-<h2 id="输入格式">输入格式</h2>
-<p>第一个行一个正整数 <span class="math inline">\(r\)</span>
-,表示行的数目。</p>
-<p>后面每行为这个数字金字塔特定行包含的整数。</p>
-<h2 id="输出格式">输出格式</h2>
-<p>单独的一行,包含那个可能得到的最大的和。</p>
-<h2 id="样例-1">样例 #1</h2>
-<h3 id="样例输入-1">样例输入 #1</h3>
-<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-number">5</span><br><span class="hljs-number">7</span><br><span class="hljs-symbol">3 </span><span class="hljs-number">8</span><br><span class="hljs-symbol">8 </span><span class="hljs-number">1</span> <span class="hljs-number">0</span><br><span class="hljs-symbol">2 </span><span class="hljs-number">7</span> <span class="hljs-number">4</span> <span class="hljs-number">4</span><br><span class="hljs-symbol">4 </span><span class="hljs-number">5</span> <span class="hljs-number">2</span> <span class="hljs-number">6</span> <span class="hljs-number">5</span><br></code></pre></td></tr></table></figure>
-<h3 id="样例输出-1">样例输出 #1</h3>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">30<br></code></pre></td></tr></table></figure>
-<h2 id="提示">提示</h2>
-<p>【数据范围】<br />
-对于 <span class="math inline">\(100\%\)</span> 的数据，<span
-class="math inline">\(1\le r \le 1000\)</span>，所有输入在 <span
-class="math inline">\([0,100]\)</span> 范围内。</p>
-<p>题目翻译来自NOCOW。</p>
-<p>USACO Training Section 1.5</p>
-<p>IOI1994 Day1T1</p>
-<h2 id="问题分析">问题分析</h2>
-<p>毫无疑问的，一道典型的线性DP问题。也可以看到这是IOI1994年的第一题，~<del>就拿过去两年的IOI什么成分不用我说了吧</del>~</p>
-<h3 id="状态设定">状态设定</h3>
-<p>问题需要求解自上而下的最大路径和，我们令状态<span
-class="math inline">\(\ f[i,j]\ \)</span>代表</p>
-<p>（1）以第<span class="math inline">\(i\)</span>行第<span
-class="math inline">\(j\)</span>个数为结尾。</p>
-<p>（2）包括这个位置在内的合法位置的最大的路径和。</p>
-<h3 id="状态的转移">状态的转移</h3>
-<p>最优路径实际上是一个树，我们考虑从后向前推。</p>
-<p>所有的求解路径构成一个满二叉树，~<del>不会真的有人枚举吧</del>我们考虑倒数第二层的某个节点（状态），那么为了最大化最终的答案，这个节点应该选取他左下或者右下较大的一个数作为路径，枚举这一层的节点，可以获取最后一层的最优答案。所以得出如下转移方程。</p>
-<p><span class="math inline">\(f[i,j] =\max
-(f[i+1,j],f[i+1,j+1])+A[i,j]\\a=？\)</span></p>
-<h3 id="初始状态">初始状态</h3>
-<p><del>明显全部为零</del></p>
-<h3 id="code">CODE</h3>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment">#include &lt;bits/stdc++.h&gt;</span><br>using namespace std;<br><span class="hljs-built_in">int</span> A[<span class="hljs-number">1005</span>][<span class="hljs-number">1005</span>]=&#123;<span class="hljs-number">0</span>&#125;;<br><span class="hljs-built_in">int</span> n;<br><span class="hljs-built_in">int</span> F[<span class="hljs-number">1005</span>][<span class="hljs-number">1005</span>]=&#123;<span class="hljs-number">0</span>&#125;;<br><span class="hljs-built_in">int</span> main()&#123;<br>cin&gt;&gt;n;<br><span class="hljs-keyword">for</span>(<span class="hljs-built_in">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)&#123;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-built_in">int</span> j=<span class="hljs-number">1</span>;j&lt;=i;j++)&#123;<br>				cin&gt;&gt;A[i][j];<br>		&#125;<br>&#125;<br><span class="hljs-keyword">for</span>(<span class="hljs-built_in">int</span> i=n;i&gt;=<span class="hljs-number">1</span>;i--)&#123;<br>		<span class="hljs-keyword">for</span>(<span class="hljs-built_in">int</span> j=<span class="hljs-number">1</span>;j&lt;=i;j++)&#123;<br>				F[i][j] = <span class="hljs-built_in">max</span>(F[i+<span class="hljs-number">1</span>][j],F[i+<span class="hljs-number">1</span>][j+<span class="hljs-number">1</span>])+A[i][j];<br>		&#125;<br>&#125;<br>cout&lt;&lt;F[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>];<br></code></pre></td></tr></table></figure>
-<h3 id="忘记的部分">忘记的部分</h3>
-<p><del>我当时为什么会想到倒着枚举呢</del></p>
-<p><del>是因为写了太多难题导致这么裸的题我考虑的太复杂了吗，状态i明显只有两种转移态，果然是抽象的题写的太多了吗。。。是啊，从开始学动态规划到AK紫题好像只过了10天诶，肯定不是我当时没理解瞎jb写没错</del></p>
+                <h1 id="lxc">lxc</h1>
+<h2 id="常用命令">常用命令</h2>
+<p>查看已有的镜像</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo lxc list<br></code></pre></td></tr></table></figure>
+<p>删除快照（保证容器在运行）</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">lxc delete name<br></code></pre></td></tr></table></figure>
+<p>自动化镜像bash</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">!/bin/bash</span><br>passwd=&#x27;1234&#x27;<br><br>read -p &quot;Enter your full name as the container name, such as zhangsan: &quot; name<br><br>echo &quot;Create the container $name...&quot;<br>echo $passwd | sudo -S lxc copy temp $name<br><br>echo &quot;Start the container $name...&quot;<br>echo $passwd | sudo -S lxc start $name<br><br>sudo -S lxc exec $name -- /bin/bash<br><br></code></pre></td></tr></table></figure>
+<p>自动配置lxc</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs shell">groupmod -n $last_name temp<br><br>echo &quot;Change IP to $IP&quot;<br>mv /etc/netplan/50-cloud-init.yaml /etc/netplan/50-cloud-init.yaml.bak<br>echo &quot;network:<br>  version: 2<br>  ethernets:<br>    eth0:<br>      dhcp4: no<br>      dhcp6: no<br>      addresses:<br>        - $IP/24<br>      gateway4: 125.221.232.1<br>      nameservers:<br>        addresses:<br>          - 255.255.255.0<br>          - 218.75.247.245&quot; &gt; /etc/netplan/50-cloud-init.yaml<br><br>netplan --debug apply<br><br>echo &quot;$last_name:$password&quot; | sudo chpasswd<br><br>reboot<br></code></pre></td></tr></table></figure>
+<p>ref：https://xungejiang.com/2022/07/14/lxd-new/</p>
 
                 
               </div>
@@ -333,7 +296,7 @@ class="math inline">\(j\)</span>个数为结尾。</p>
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%BA%BF%E6%80%A7DP/">#线性DP</a>
+        <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">#环境搭建</a>
       
     </div>
   
@@ -345,8 +308,8 @@ class="math inline">\(j\)</span>个数为结尾。</p>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>数字三角形</div>
-      <div>http://lianouxianjz.github.io/2022/09/21/20220921/</div>
+      <div>lxd常用脚本记录</div>
+      <div>http://lianouxianjz.github.io/2023/02/28/lxc/</div>
     </div>
     <div class="license-meta">
       
@@ -358,7 +321,7 @@ class="math inline">\(j\)</span>个数为结尾。</p>
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年9月21日</div>
+          <div>2023年2月28日</div>
         </div>
       
       
@@ -374,18 +337,12 @@ class="math inline">\(j\)</span>个数为结尾。</p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/02/28/lxc/" title="lxd常用脚本记录">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">lxd常用脚本记录</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/21/hello-world/" title="hexo配置记录">
-                        <span class="hidden-mobile">hexo配置记录</span>
+                      <a href="/2022/09/21/20220921/" title="数字三角形">
+                        <span class="hidden-mobile">数字三角形</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
