@@ -16,12 +16,12 @@
   <meta name="author" content="Zs">
   <meta name="keywords" content="">
   
-    <meta name="description" content="字符串1001Calculate a+b and output the sum in standard format – that is, the digits must be separated  into groups of three by commas  unless there are less than four digits). Input Specification:Each in">
+    <meta name="description" content="字符串1001 Calculate a+b and output the sum in standard format -- that is, the digits must be separated into groups of three by commas unless there are less than four digits). Input Specification: Each i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="PAT记录">
 <meta property="og:url" content="http://lianouxianjz.github.io/2023/03/01/PAT/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="字符串1001Calculate a+b and output the sum in standard format – that is, the digits must be separated  into groups of three by commas  unless there are less than four digits). Input Specification:Each in">
+<meta property="og:description" content="字符串1001 Calculate a+b and output the sum in standard format -- that is, the digits must be separated into groups of three by commas unless there are less than four digits). Input Specification: Each i">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-01T02:49:04.172Z">
 <meta property="article:modified_time" content="2023-03-02T03:04:10.801Z">
@@ -273,84 +273,109 @@
             
               <div class="markdown-body">
                 
-                <h1 id="字符串1001"><a href="#字符串1001" class="headerlink" title="字符串1001"></a>字符串1001</h1><p>Calculate <em>a</em>+<em>b</em> and output the sum in standard format – that is, the digits must be separated  into groups of three by commas  unless there are less than four digits).</p>
-<h3 id="Input-Specification"><a href="#Input-Specification" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case contains a pair of integers <em>a</em> and <em>b</em> where $10^{-6}&lt;&#x3D;a,b&lt;&#x3D;10^{6}$ . The numbers are separated by a space.</p>
-<h3 id="Output-Specification"><a href="#Output-Specification" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, you should output the sum of <em>a</em> and <em>b</em> in one line. The sum must be written in the standard format.</p>
-<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs in">-1000000 9<br></code></pre></td></tr></table></figure>
-
-<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs out">-999,991<br></code></pre></td></tr></table></figure>
-
+                <h1 id="字符串1001">字符串1001</h1>
+<p>Calculate <em>a</em>+<em>b</em> and output the sum in standard format
+-- that is, the digits must be separated into groups of three by commas
+unless there are less than four digits).</p>
+<h3 id="input-specification">Input Specification:</h3>
+<p>Each input file contains one test case. Each case contains a pair of
+integers <em>a</em> and <em>b</em> where <span
+class="math inline">\(10^{-6}&lt;=a,b&lt;=10^{6}\)</span> . The numbers
+are separated by a space.</p>
+<h3 id="output-specification">Output Specification:</h3>
+<p>For each test case, you should output the sum of <em>a</em> and
+<em>b</em> in one line. The sum must be written in the standard
+format.</p>
+<h3 id="sample-input">Sample Input:</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs in">-1000000 9<br></code></pre></td></tr></table></figure>
+<h3 id="sample-output">Sample Output:</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs out">-999,991<br></code></pre></td></tr></table></figure>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br><span class="hljs-type">int</span> a,b,c;<br>cin&gt;&gt;a&gt;&gt;b;<br>c = a+b;<br>string num = <span class="hljs-built_in">to_string</span>(c);<br>string res;<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=num.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>,j=<span class="hljs-number">0</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;<br><span class="hljs-comment">//num是倒着枚举的，而结果方向与枚举方向相反，在一个空串上不断从左边添加</span><br><span class="hljs-comment">//       1 2 3 4【】 </span><br>res = num[i]+res;<br>++j;<br><span class="hljs-comment">//满足三个条件加逗号，已经有了三个数字，正数时不能是最后一位，负数时前一位不能为‘-’。</span><br><span class="hljs-keyword">if</span>(j%<span class="hljs-number">3</span>==<span class="hljs-number">0</span> &amp;&amp; i &amp;&amp; num[i<span class="hljs-number">-1</span>]!=<span class="hljs-string">&#x27;-&#x27;</span> )<br>res = <span class="hljs-string">&#x27;,&#x27;</span>+res;<br>&#125;<br>cout&lt;&lt;res;<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-number">1.</span>to_string() 将一个数字转化为字符串<br><span class="hljs-number">2.</span>字符串的拼接 ‘’+<span class="hljs-built_in">str</span> 向左不断拼接 <span class="hljs-built_in">str</span>+‘’ 向右不断拼接<br><span class="hljs-number">3.</span>正数范围一般比负数小 设计长度的判断可以先判断正数再判断负数<br></code></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-<h1 id="字符串1005"><a href="#字符串1005" class="headerlink" title="字符串1005"></a>字符串1005</h1><p>Given a non-negative integer <em>N</em>, your task is to compute the sum of all the digits of <em>N</em>, and output every digit of the sum in English.</p>
-<h3 id="Input-Specification-1"><a href="#Input-Specification-1" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case occupies one line which contains an <em>N</em> (≤10100).</p>
-<h3 id="Output-Specification-1"><a href="#Output-Specification-1" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, output in one line the digits of the sum in English words. There must be one space between two consecutive words, but no extra space at the end of a line.</p>
-<h3 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs in">12345<br></code></pre></td></tr></table></figure>
-
-<h3 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs out">one five<br></code></pre></td></tr></table></figure>
-
-
-
+<h1 id="字符串1005">字符串1005</h1>
+<p>Given a non-negative integer <em>N</em>, your task is to compute the
+sum of all the digits of <em>N</em>, and output every digit of the sum
+in English.</p>
+<h3 id="input-specification-1">Input Specification:</h3>
+<p>Each input file contains one test case. Each case occupies one line
+which contains an <em>N</em> (≤10100).</p>
+<h3 id="output-specification-1">Output Specification:</h3>
+<p>For each test case, output in one line the digits of the sum in
+English words. There must be one space between two consecutive words,
+but no extra space at the end of a line.</p>
+<h3 id="sample-input-1">Sample Input:</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs in">12345<br></code></pre></td></tr></table></figure>
+<h3 id="sample-output-1">Sample Output:</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs out">one five<br></code></pre></td></tr></table></figure>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>string n ;<br>cin&gt;&gt;n;<br><span class="hljs-type">int</span> s = <span class="hljs-number">0</span>;<br><span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> i:n)&#123;<br>s+=i-<span class="hljs-string">&#x27;0&#x27;</span>;<br>&#125;<br>string str = <span class="hljs-built_in">to_string</span>(s);<br><span class="hljs-type">char</span> res[<span class="hljs-number">10</span>][<span class="hljs-number">10</span>]=&#123;<span class="hljs-string">&quot;zero&quot;</span>,<span class="hljs-string">&quot;one&quot;</span>,<span class="hljs-string">&quot;two&quot;</span>,<span class="hljs-string">&quot;three&quot;</span>,<span class="hljs-string">&quot;four&quot;</span>,<span class="hljs-string">&quot;five&quot;</span>,<span class="hljs-string">&quot;six&quot;</span>,<span class="hljs-string">&quot;seven&quot;</span>,<span class="hljs-string">&quot;eight&quot;</span>,<span class="hljs-string">&quot;nine&quot;</span>&#125;;<br>cout&lt;&lt;res[str[<span class="hljs-number">0</span>]-<span class="hljs-string">&#x27;0&#x27;</span>];<br><span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=str.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;i++)<br>cout&lt;&lt;<span class="hljs-string">&#x27; &#x27;</span>&lt;&lt;res[str[i]-<span class="hljs-string">&#x27;0&#x27;</span>];<br><span class="hljs-keyword">return</span> <span class="hljs-number">0</span> ;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-number">1.</span><span class="hljs-keyword">auto</span> 语法<br><span class="hljs-number">2.</span>处理多余空格时，先输出一个 <br><span class="hljs-number">3.</span>答案比较多时使用<span class="hljs-type">char</span>数组存放结果<br></code></pre></td></tr></table></figure>
-
-
-
-<h1 id="字符串1006"><a href="#字符串1006" class="headerlink" title="字符串1006"></a>字符串1006</h1><p>At the beginning of every day, the first person who signs in the computer room will unlock the door, and the last one who signs out will lock the door. Given the records of signing in’s and out’s, you are supposed to find the ones who have unlocked and locked the door on that day.</p>
-<h3 id="Input-Specification-2"><a href="#Input-Specification-2" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case contains the records for one day. The case starts with a positive integer <em>M</em>, which is the total number of records, followed by <em>M</em> lines, each in the format:</p>
+<h1 id="字符串1006">字符串1006</h1>
+<p>At the beginning of every day, the first person who signs in the
+computer room will unlock the door, and the last one who signs out will
+lock the door. Given the records of signing in's and out's, you are
+supposed to find the ones who have unlocked and locked the door on that
+day.</p>
+<h3 id="input-specification-2">Input Specification:</h3>
+<p>Each input file contains one test case. Each case contains the
+records for one day. The case starts with a positive integer <em>M</em>,
+which is the total number of records, followed by <em>M</em> lines, each
+in the format:</p>
 <figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ceylon">ID<span class="hljs-number">_n</span>umber Sign<span class="hljs-number">_</span><span class="hljs-keyword">in</span><span class="hljs-number">_</span>time Sign<span class="hljs-number">_</span><span class="hljs-keyword">out</span><span class="hljs-number">_</span>time<br></code></pre></td></tr></table></figure>
-
-<p>where times are given in the format <code>HH:MM:SS</code>, and <code>ID_number</code> is a string with no more than 15 characters.</p>
-<h3 id="Output-Specification-2"><a href="#Output-Specification-2" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, output in one line the ID numbers of the persons who have unlocked and locked the door on that day. The two ID numbers must be separated by one space.</p>
-<p>Note: It is guaranteed that the records are consistent. That is, the sign in time must be earlier than the sign out time for each person, and there are no two persons sign in or out at the same moment.</p>
-<h3 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input:"></a>Sample Input:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs in">3<br>CS301111 15:30:28 17:00:10<br>SC3021234 08:00:00 11:25:25<br>CS301133 21:45:00 21:58:40<br></code></pre></td></tr></table></figure>
-
-<h3 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output:"></a>Sample Output:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs out">SC3021234 CS301133<br></code></pre></td></tr></table></figure>
-
-
-
+<p>where times are given in the format <code>HH:MM:SS</code>, and
+<code>ID_number</code> is a string with no more than 15 characters.</p>
+<h3 id="output-specification-2">Output Specification:</h3>
+<p>For each test case, output in one line the ID numbers of the persons
+who have unlocked and locked the door on that day. The two ID numbers
+must be separated by one space.</p>
+<p>Note: It is guaranteed that the records are consistent. That is, the
+sign in time must be earlier than the sign out time for each person, and
+there are no two persons sign in or out at the same moment.</p>
+<h3 id="sample-input-2">Sample Input:</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs in">3<br>CS301111 15:30:28 17:00:10<br>SC3021234 08:00:00 11:25:25<br>CS301133 21:45:00 21:58:40<br></code></pre></td></tr></table></figure>
+<h3 id="sample-output-2">Sample Output:</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs out">SC3021234 CS301133<br></code></pre></td></tr></table></figure>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    cin&gt;&gt;n;<br>    string id,<span class="hljs-type">in_t</span>,<span class="hljs-type">out_t</span>;<br>    string fast_id,fast_time;<br>    string last_id,last_time;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)&#123;<br>        cin&gt;&gt;id&gt;&gt;<span class="hljs-type">in_t</span>&gt;&gt;<span class="hljs-type">out_t</span>;<br>        <span class="hljs-keyword">if</span>(i==<span class="hljs-number">1</span>||<span class="hljs-type">in_t</span>&lt;fast_time)&#123;<br>            fast_id = id;<br>            fast_time = <span class="hljs-type">in_t</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(i==<span class="hljs-number">1</span>||<span class="hljs-type">out_t</span>&gt;last_time)&#123;<br>            last_id = id;<br>            last_time = <span class="hljs-type">out_t</span>;<br>        &#125;<br>    &#125;<br>    cout&lt;&lt;fast_id&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;last_id&lt;&lt;endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-number">1.</span>边读边处理<br><span class="hljs-number">2.</span>当位数相同时，数字大小等同于字典序大小，<span class="hljs-built_in">string</span>可以使用&lt;来比较<br><span class="hljs-number">3.</span>要清楚需要记录什么信息<br></code></pre></td></tr></table></figure>
-
-<h1 id="字符串1035"><a href="#字符串1035" class="headerlink" title="字符串1035"></a>字符串1035</h1><p>To prepare for PAT, the judge sometimes has to generate random passwords for the users. The problem is that there are always some confusing passwords since it is hard to distinguish <code>1</code> (one) from <code>l</code> (<code>L</code> in lowercase), or <code>0</code> (zero) from <code>O</code> (<code>o</code> in uppercase). One solution is to replace <code>1</code> (one) by <code>@</code>, <code>0</code> (zero) by <code>%</code>, <code>l</code> by <code>L</code>, and <code>O</code> by <code>o</code>. Now it is your job to write a program to check the accounts generated by the judge, and to help the juge modify the confusing passwords.</p>
-<h3 id="Input-Specification-3"><a href="#Input-Specification-3" class="headerlink" title="Input Specification:"></a>Input Specification:</h3><p>Each input file contains one test case. Each case contains a positive integer <em>N</em> (≤1000), followed by <em>N</em> lines of accounts. Each account consists of a user name and a password, both are strings of no more than 10 characters with no space.</p>
-<h3 id="Output-Specification-3"><a href="#Output-Specification-3" class="headerlink" title="Output Specification:"></a>Output Specification:</h3><p>For each test case, first print the number <em>M</em> of accounts that have been modified, then print in the following <em>M</em> lines the modified accounts info, that is, the user names and the corresponding modified passwords. The accounts must be printed in the same order as they are read in. If no account is modified, print in one line <code>There are N accounts and no account is modified</code> where <code>N</code> is the total number of accounts. However, if <code>N</code> is one, you must print <code>There is 1 account and no account is modified</code> instead.</p>
-<h3 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input 1:"></a>Sample Input 1:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs in">3<br>Team000002 Rlsp0dfa<br>Team000003 perfectpwd<br>Team000001 R1spOdfa<br></code></pre></td></tr></table></figure>
-
-<h3 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output 1:"></a>Sample Output 1:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs out">2<br>Team000002 RLsp%dfa<br>Team000001 R@spodfa<br></code></pre></td></tr></table></figure>
-
-<h3 id="Sample-Input-2"><a href="#Sample-Input-2" class="headerlink" title="Sample Input 2:"></a>Sample Input 2:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs in">1<br>team110 abcdefg332<br></code></pre></td></tr></table></figure>
-
-<h3 id="Sample-Output-2"><a href="#Sample-Output-2" class="headerlink" title="Sample Output 2:"></a>Sample Output 2:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs out">There is 1 account and no account is modified<br></code></pre></td></tr></table></figure>
-
-<h3 id="Sample-Input-3"><a href="#Sample-Input-3" class="headerlink" title="Sample Input 3:"></a>Sample Input 3:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs in">2<br>team110 abcdefg222<br>team220 abcdefg333<br></code></pre></td></tr></table></figure>
-
-<h3 id="Sample-Output-3"><a href="#Sample-Output-3" class="headerlink" title="Sample Output 3:"></a>Sample Output 3:</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs out">There are 2 accounts and no account is modified<br></code></pre></td></tr></table></figure>
-
-
-
+<h1 id="字符串1035">字符串1035</h1>
+<p>To prepare for PAT, the judge sometimes has to generate random
+passwords for the users. The problem is that there are always some
+confusing passwords since it is hard to distinguish <code>1</code> (one)
+from <code>l</code> (<code>L</code> in lowercase), or <code>0</code>
+(zero) from <code>O</code> (<code>o</code> in uppercase). One solution
+is to replace <code>1</code> (one) by <code>@</code>, <code>0</code>
+(zero) by <code>%</code>, <code>l</code> by <code>L</code>, and
+<code>O</code> by <code>o</code>. Now it is your job to write a program
+to check the accounts generated by the judge, and to help the juge
+modify the confusing passwords.</p>
+<h3 id="input-specification-3">Input Specification:</h3>
+<p>Each input file contains one test case. Each case contains a positive
+integer <em>N</em> (≤1000), followed by <em>N</em> lines of accounts.
+Each account consists of a user name and a password, both are strings of
+no more than 10 characters with no space.</p>
+<h3 id="output-specification-3">Output Specification:</h3>
+<p>For each test case, first print the number <em>M</em> of accounts
+that have been modified, then print in the following <em>M</em> lines
+the modified accounts info, that is, the user names and the
+corresponding modified passwords. The accounts must be printed in the
+same order as they are read in. If no account is modified, print in one
+line <code>There are N accounts and no account is modified</code> where
+<code>N</code> is the total number of accounts. However, if
+<code>N</code> is one, you must print
+<code>There is 1 account and no account is modified</code> instead.</p>
+<h3 id="sample-input-1-1">Sample Input 1:</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs in">3<br>Team000002 Rlsp0dfa<br>Team000003 perfectpwd<br>Team000001 R1spOdfa<br></code></pre></td></tr></table></figure>
+<h3 id="sample-output-1-1">Sample Output 1:</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs out">2<br>Team000002 RLsp%dfa<br>Team000001 R@spodfa<br></code></pre></td></tr></table></figure>
+<h3 id="sample-input-2-1">Sample Input 2:</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs in">1<br>team110 abcdefg332<br></code></pre></td></tr></table></figure>
+<h3 id="sample-output-2-1">Sample Output 2:</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs out">There is 1 account and no account is modified<br></code></pre></td></tr></table></figure>
+<h3 id="sample-input-3">Sample Input 3:</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs in">2<br>team110 abcdefg222<br>team220 abcdefg333<br></code></pre></td></tr></table></figure>
+<h3 id="sample-output-3">Sample Output 3:</h3>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs out">There are 2 accounts and no account is modified<br></code></pre></td></tr></table></figure>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-type">int</span> n;<br>    cin&gt;&gt;n;<br>    <span class="hljs-type">int</span> countt=<span class="hljs-number">0</span>;<br>    string name,pass;<br>    string N[<span class="hljs-number">1001</span>];<br>    string Pass[<span class="hljs-number">1001</span>];<br>    <br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)&#123;<br>        cin&gt;&gt;name&gt;&gt;pass;<br>        <span class="hljs-type">int</span> tag=<span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j=<span class="hljs-number">0</span>;j&lt;pass.<span class="hljs-built_in">size</span>();j++)&#123;<br>            <span class="hljs-keyword">if</span>(pass[j]==<span class="hljs-string">&#x27;1&#x27;</span>)<br>                pass[j]=<span class="hljs-string">&#x27;@&#x27;</span>,tag=<span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">if</span>(pass[j]==<span class="hljs-string">&#x27;0&#x27;</span>)<br>                pass[j]=<span class="hljs-string">&#x27;%&#x27;</span>,tag=<span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">if</span>(pass[j]==<span class="hljs-string">&#x27;l&#x27;</span>)<br>                pass[j]=<span class="hljs-string">&#x27;L&#x27;</span>,tag=<span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">if</span>(pass[j]==<span class="hljs-string">&#x27;O&#x27;</span>)<br>                pass[j]=<span class="hljs-string">&#x27;o&#x27;</span>,tag=<span class="hljs-number">1</span>;<br>        &#125; <br>        <span class="hljs-keyword">if</span>(tag==<span class="hljs-number">1</span>)&#123;<br>		countt++;<br>        N[countt] = name;<br>        Pass[countt] = pass;<br>		&#125;<br>        <br>    &#125;<br>    <span class="hljs-keyword">if</span>(countt==<span class="hljs-number">0</span>)&#123;<br>        <span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>)<br>            cout&lt;&lt;<span class="hljs-string">&quot;There is 1 account and no account is modified&quot;</span>;<br>        <span class="hljs-keyword">else</span><br>            cout&lt;&lt;<span class="hljs-string">&quot;There are &quot;</span>+<span class="hljs-built_in">to_string</span>(n)+<span class="hljs-string">&quot; &quot;</span>+<span class="hljs-string">&quot;accounts and no account is modified&quot;</span>;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br>    cout&lt;&lt;countt&lt;&lt;endl;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">1</span>;i&lt;=countt;i++)<br>        cout&lt;&lt;N[i]&lt;&lt;<span class="hljs-string">&quot; &quot;</span>&lt;&lt;Pass[i]&lt;&lt;endl;<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-
-
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs">1.处理字符串问题时要格外注意换行<br>2.判断条件要细心，记的加括号<br></code></pre></td></tr></table></figure>
-
 
                 
               </div>
