@@ -24,7 +24,7 @@
 <meta property="og:description" content="前言 leetcode会自动清除提交过的代码看看人家洛谷，一年前的还留着呢，对于我这个资深bug师来说那可是毁灭性的。开始记录吧，以后开三个帖子，一个挂leetcode，一个挂洛谷，一个挂PAT吧。 最长的回文子串 给你一个字符串 s，找到 s 中最长的回文子串。 如果字符串的反序与原始字符串相同，则该字符串称为回文字符串。 示例 1： 123输入：s &#x3D; &quot;babad&quot;输出：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-02T01:52:51.276Z">
-<meta property="article:modified_time" content="2023-06-04T07:26:09.299Z">
+<meta property="article:modified_time" content="2023-06-05T07:39:52.647Z">
 <meta property="article:author" content="Zs">
 <meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary_large_image">
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2k 字
+          3.6k 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          17 分钟
+          31 分钟
         
       </span>
     
@@ -331,6 +331,74 @@ class="math inline">\(i\)</span>为中心向左右拓展的会文子串，因此
 class="math inline">\(max\_le n\)</span>就好。为什么是<span
 class="math inline">\(max\_len\)</span>而不需要减1呢，索引是从0开始的啊。因为substr采用的是左闭右开的形式，右边多一个位置没关系～</p>
 <h3 id="总结">总结</h3>
+<h2 id="下一个排列">下一个排列</h2>
+<p>整数数组的一个 <strong>排列</strong>
+就是将其所有成员以序列或线性顺序排列。</p>
+<ul>
+<li>例如，<code>arr = [1,2,3]</code> ，以下这些都可以视作
+<code>arr</code>
+的排列：<code>[1,2,3]</code>、<code>[1,3,2]</code>、<code>[3,1,2]</code>、<code>[2,3,1]</code>
+。</li>
+</ul>
+<p>整数数组的 <strong>下一个排列</strong>
+是指其整数的下一个字典序更大的排列。更正式地，如果数组的所有排列根据其字典顺序从小到大排列在一个容器中，那么数组的
+<strong>下一个排列</strong>
+就是在这个有序容器中排在它后面的那个排列。如果不存在下一个更大的排列，那么这个数组必须重排为字典序最小的排列（即，其元素按升序排列）。</p>
+<ul>
+<li>例如，<code>arr = [1,2,3]</code> 的下一个排列是 <code>[1,3,2]</code>
+。</li>
+<li>类似地，<code>arr = [2,3,1]</code> 的下一个排列是
+<code>[3,1,2]</code> 。</li>
+<li>而 <code>arr = [3,2,1]</code> 的下一个排列是 <code>[1,2,3]</code>
+，因为 <code>[3,2,1]</code> 不存在一个字典序更大的排列。</li>
+</ul>
+<p>给你一个整数数组 <code>nums</code> ，找出 <code>nums</code>
+的下一个排列。</p>
+<p>必须 <a
+target="_blank" rel="noopener" href="https://baike.baidu.com/item/原地算法"><strong>原地</strong></a>
+修改，只允许使用额外常数空间。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">输入：nums = [1,2,3]<br>输出：[1,3,2]<br></code></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">输入：nums = [3,2,1]<br>输出：[1,2,3]<br></code></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs plain">输入：nums = [1,1,5]<br>输出：[1,5,1]<br></code></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 100</code></li>
+<li><code>0 &lt;= nums[i] &lt;= 100</code></li>
+</ul>
+<h3 id="分析-1">分析</h3>
+<p>这个问题首先要清楚什么是<strong>字典序，</strong>现在我们有一个字符串，['1','2','3']。那么它的字典序实际上是一个整数序列[49，50，51]
+。这道题实际叙述的并不好，其实就是：</p>
+<p>**需要找到一个比当前字符串更大的典序$ S* <span
+class="math inline">\(，而不存在任何一个字典序满足比原字典序更大而比\)</span>S
+*<span class="math inline">\(更小的字典序\)</span>^{sub}$。**</p>
+<p>那么我们该如何找到这样的<span
+class="math inline">\(S*\)</span>呢？，假如题目要求的不是我们对<span
+class="math inline">\(nums\)</span>排序的话，我们只需要把<span
+class="math inline">\(nums\)</span>看作一个整数，然后加1就是要求的结果。然而题目要求我们通过对<span
+class="math inline">\(nums\)</span>排序来使得找到字典序<span
+class="math inline">\(S*\)</span>。</p>
+<p>为了使得字典序变高，很明显我们需要把某一位置的元素变为字典序更大的元素，而这个操作只能通过交换来完成。我们把交换的元素记作<span
+class="math inline">\(A[L],A[R]\)</span>，为了满足条件<span
+class="math inline">\(^{sub}\)</span>，我们需要<span
+class="math inline">\(R\)</span>尽可能的大，同时我们希望<span
+class="math inline">\(A[L]\)</span>恰好小于<span
+class="math inline">\(A[R]\)</span>，交换完成后我们要令<span
+class="math inline">\(A[L]&#39;\)</span>之后的位置升序（使得交换后的大序列更小）。</p>
+<p>首先寻找<span
+class="math inline">\(A[L]\)</span>,从后向前扫描，只要满足<span
+class="math inline">\(A[i]&lt;A[i+1]\)</span>时，我们便找到了<span
+class="math inline">\(A[L]\)</span>的位置，且<span
+class="math inline">\(i\)</span>之后的位置一定是递增的。</p>
+<p>接下来寻找<span
+class="math inline">\(A[R]\)</span>,从后向前找到第一个大于<span
+class="math inline">\(A[L]\)</span>的元素</p>
+<p>交换两者，并令<span
+class="math inline">\(A[L]\)</span>之后的位置递增。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs c++"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">nextPermutation</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>       <span class="hljs-type">int</span> n = nums.<span class="hljs-built_in">size</span>();<br>       <span class="hljs-type">int</span> l=<span class="hljs-number">-1</span>,r=<span class="hljs-number">-1</span>;<br>       <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=n<span class="hljs-number">-2</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;<br>           <span class="hljs-keyword">if</span>(nums[i]&lt;nums[i+<span class="hljs-number">1</span>])&#123;<br>               l = i;<br>               <span class="hljs-keyword">break</span>;<br>           &#125;<br>       &#125;<br>       <span class="hljs-keyword">if</span>(l==<span class="hljs-number">-1</span>)&#123;<br>           <span class="hljs-built_in">reverse</span>(nums.<span class="hljs-built_in">begin</span>(),nums.<span class="hljs-built_in">end</span>());<br>           <span class="hljs-keyword">return</span> ;<br>       &#125;<br>       <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=n<span class="hljs-number">-1</span>;i&gt;l;i--)&#123;<br>           <span class="hljs-keyword">if</span>(nums[i]&gt;nums[l])&#123;<br>               r = i;<br>               <span class="hljs-keyword">break</span>;<br>           &#125;<br>       &#125;<br>       <span class="hljs-built_in">swap</span>(nums[l],nums[r]);<br>       <span class="hljs-comment">//sort(nums.begin()+l+1,nums.end());</span><br>       <span class="hljs-built_in">reverse</span>(nums.<span class="hljs-built_in">begin</span>() + l + <span class="hljs-number">1</span>, nums.<span class="hljs-built_in">end</span>());<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<h3 id="总结-1">总结</h3>
 
                 
               </div>
