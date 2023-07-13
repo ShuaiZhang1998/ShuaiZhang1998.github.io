@@ -16,22 +16,22 @@
   <meta name="author" content="Zs">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言 最近由于在写cs144的lab一直在和vim打交道，然后就诞生出了一个莫名其妙的需求，如何从服务器的vim中复制到我本地的剪贴板上？然后我搜索到了 1ggvG+y 没错，这东西根本没用啊，它是复制到了服务器本地的寄存器上...然后发现了这篇神奇的文章 https:&#x2F;&#x2F;flogx.com&#x2F;post&#x2F;vim-remote-copy&#x2F; 修改本机ssh设置 1vim ~&#x2F;.ssh&#x2F;config 然后">
+    <meta name="description" content="Ubuntu: 18.04 问题：直接输入sudo apt install mysql-server安装的mysql5.x的版本 完全卸载MySQL 12345sudo apt-get autoremove --purge mysql-serversudo apt-get remove mysql-serversudo apt-get autoremove mysql-serversudo apt">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vim远程拷贝">
-<meta property="og:url" content="http://shuaizhang1998.github.io/2023/06/20/vim%E8%BF%9C%E7%A8%8B%E6%8B%B7%E8%B4%9D/index.html">
+<meta property="og:title" content="服务器Mysql安装（apt好坑）">
+<meta property="og:url" content="http://shuaizhang1998.github.io/2023/04/22/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%89%88mysql%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言 最近由于在写cs144的lab一直在和vim打交道，然后就诞生出了一个莫名其妙的需求，如何从服务器的vim中复制到我本地的剪贴板上？然后我搜索到了 1ggvG+y 没错，这东西根本没用啊，它是复制到了服务器本地的寄存器上...然后发现了这篇神奇的文章 https:&#x2F;&#x2F;flogx.com&#x2F;post&#x2F;vim-remote-copy&#x2F; 修改本机ssh设置 1vim ~&#x2F;.ssh&#x2F;config 然后">
+<meta property="og:description" content="Ubuntu: 18.04 问题：直接输入sudo apt install mysql-server安装的mysql5.x的版本 完全卸载MySQL 12345sudo apt-get autoremove --purge mysql-serversudo apt-get remove mysql-serversudo apt-get autoremove mysql-serversudo apt">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-06-20T05:13:07.720Z">
-<meta property="article:modified_time" content="2023-07-13T08:29:01.842Z">
+<meta property="article:published_time" content="2023-04-22T14:07:45.952Z">
+<meta property="article:modified_time" content="2023-07-13T08:27:24.879Z">
 <meta property="article:author" content="Zs">
-<meta property="article:tag" content="vim">
+<meta property="article:tag" content="杂项">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>vim远程拷贝 - Hexo</title>
+  <title>服务器Mysql安装（apt好坑） - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +196,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="vim远程拷贝"></span>
+            <span id="subtitle" data-typed-text="服务器Mysql安装（apt好坑）"></span>
           
         </div>
 
@@ -207,8 +207,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-06-20 13:13" pubdate>
-          2023年6月20日 下午
+        <time datetime="2023-04-22 22:07" pubdate>
+          2023年4月22日 晚上
         </time>
       </span>
     
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.8k 字
+          591 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          16 分钟
+          5 分钟
         
       </span>
     
@@ -268,37 +268,29 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">vim远程拷贝</h1>
+            <h1 style="display: none">服务器Mysql安装（apt好坑）</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="前言">前言</h1>
-<p>最近由于在写cs144的lab一直在和vim打交道，然后就诞生出了一个莫名其妙的需求，如何从服务器的vim中复制到我本地的剪贴板上？然后我搜索到了</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ggvG+y<br></code></pre></td></tr></table></figure>
-<p>没错，这东西根本没用啊，它是复制到了服务器本地的寄存器上...然后发现了这篇神奇的文章</p>
-<p>https://flogx.com/post/vim-remote-copy/</p>
-<h2 id="修改本机ssh设置">修改本机ssh设置</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim ~/.ssh/config<br></code></pre></td></tr></table></figure>
-<p>然后添加如下内容</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">Host *<br>    RemoteForward 22222 127.0.0.1:22222<br></code></pre></td></tr></table></figure>
-<p>**这段配置的意义是使用 SSH 登录任何主机时（Host *），将主机本地的
-22222 端口（RemoteForward 22222）映射到远程主机的 127.0.0.1:22222
-地址上。**</p>
-<h2 id="修改服务器的vim配置文件">修改服务器的Vim配置文件</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd ~<br>vim .vimrc<br></code></pre></td></tr></table></figure>
-<p>然后添加如下内容</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell">function! s:send2net()<br>    let ch = ch_open(&#x27;127.0.0.1:22222&#x27;)<br>    if ch_status(ch) != &quot;open&quot;<br>        echomsg &quot;Failed to open channel, status = &quot; .. ch_status(sh)<br>    endif<br>    call ch_sendraw(ch, getreg(&#x27;&quot;&#x27;))<br>endfunction<br><br>augroup send2net<br>    au!<br>    au TextYankPost * if v:event.operator ==# &#x27;y&#x27; | call s:send2net() | endif<br>augroup END<br></code></pre></td></tr></table></figure>
-<p><strong>这段配置的意义是在触发vim的y（复制）操作时，将内容发送到本地的22222端口，在前边我们已经将本机和服务器的22222端口进行了绑定。</strong></p>
-<h2 id="配置mac系统">配置mac系统</h2>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">cat &gt; $HOME/Library/LaunchAgents/pbcopy.plist &lt;&lt; END<br></code></pre></td></tr></table></figure>
-<p>添加如下内容</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs shell">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br>&lt;!DOCTYPE plist PUBLIC &quot;-//Apple Computer//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;<br>&lt;plist version=&quot;1.0&quot;&gt;<br>    &lt;dict&gt;<br>        &lt;key&gt;Label&lt;/key&gt;<br>            &lt;string&gt;localhost.pbcopy&lt;/string&gt;<br>        &lt;key&gt;ProgramArguments&lt;/key&gt;<br>        &lt;array&gt;<br>            &lt;string&gt;/usr/bin/pbcopy&lt;/string&gt;<br>        &lt;/array&gt;<br>        &lt;key&gt;inetdCompatibility&lt;/key&gt;<br>        &lt;dict&gt;<br>            &lt;key&gt;Wait&lt;/key&gt;<br>            &lt;false/&gt;<br>        &lt;/dict&gt;<br>        &lt;key&gt;Sockets&lt;/key&gt;<br>        &lt;dict&gt;<br>            &lt;key&gt;Listeners&lt;/key&gt;<br>            &lt;dict&gt;<br>                &lt;key&gt;SockServiceName&lt;/key&gt;<br>                &lt;string&gt;22222&lt;/string&gt;<br>                &lt;key&gt;SockNodeName&lt;/key&gt;<br>                &lt;string&gt;127.0.0.1&lt;/string&gt;<br>            &lt;/dict&gt;<br>        &lt;/dict&gt;<br>    &lt;/dict&gt;<br>&lt;/plist&gt;<br>END<br></code></pre></td></tr></table></figure>
-<p>加载配置</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">launchctl load -w $HOME/Library/LaunchAgents/pbcopy.plist<br></code></pre></td></tr></table></figure>
-<p>检查配置</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">launchctl list | grep localhost.pbcopy<br></code></pre></td></tr></table></figure>
-<p><strong>这段配置的意义就是监听本地22222端口的链接，并把数据复制到剪贴板中（pbcopy）。</strong></p>
+                <p><strong>Ubuntu</strong>: 18.04</p>
+<p><strong>问题</strong>：直接输入sudo apt install
+mysql-server安装的mysql5.x的版本</p>
+<p><strong>完全卸载MySQL</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get autoremove --purge mysql-server<br>sudo apt-get remove mysql-server<br>sudo apt-get autoremove mysql-server<br>sudo apt-get remove mysql-common<br>dpkg -l |grep ^rc|awk ‘&#123;print $2&#125;’ |sudo xargs dpkg -P<br></code></pre></td></tr></table></figure>
+<p><strong>更新</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get update<br>sudo apt-get upgrade<br></code></pre></td></tr></table></figure>
+<p><strong>下载</strong></p>
+<p>https://dev.mysql.com/downloads/</p>
+<p>找到community
+server，选择好版本点小企鹅<del>逆天真的，找半天</del>下载deb，传输到服务器上</p>
+<p>逆天操作：回车会一直卡，全选ok</p>
+<p><strong>更新</strong></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get update<br>sudo apt-get install mysql-server <br><span class="hljs-meta prompt_"># </span><span class="language-bash">加密方式用传统</span><br></code></pre></td></tr></table></figure>
+<p><strong>其他操作</strong></p>
+<p><strong>放行3306端口</strong> <del>不愧是云耀裸机</del></p>
+<p><strong>登陆数据库</strong></p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">use mysql;<br><span class="hljs-keyword">select</span> <span class="hljs-keyword">user</span>,host <span class="hljs-keyword">from</span> <span class="hljs-keyword">user</span>;<br><span class="hljs-keyword">update</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">set</span> host = &quot;%&quot; <span class="hljs-keyword">where</span> <span class="hljs-keyword">user</span> = &quot;root&quot;;<br>flush <span class="hljs-keyword">privileges</span>;<br></code></pre></td></tr></table></figure>
 
                 
               </div>
@@ -311,7 +303,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/vim/">#vim</a>
+        <a href="/tags/%E6%9D%82%E9%A1%B9/">#杂项</a>
       
     </div>
   
@@ -323,8 +315,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>vim远程拷贝</div>
-      <div>http://shuaizhang1998.github.io/2023/06/20/vim远程拷贝/</div>
+      <div>服务器Mysql安装（apt好坑）</div>
+      <div>http://shuaizhang1998.github.io/2023/04/22/服务器版mysql配置/</div>
     </div>
     <div class="license-meta">
       
@@ -336,7 +328,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年6月20日</div>
+          <div>2023年4月22日</div>
         </div>
       
       
@@ -352,9 +344,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/06/25/%E8%96%9B%E5%AE%9A%E8%B0%94%E7%9A%84AI%E6%AF%94%E8%B5%9B/" title="导致师弟被喷的比赛小项目">
+                      <a href="/2023/05/30/huggingface%E4%B9%8Btransformers/" title="huggingface之transformers">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">导致师弟被喷的比赛小项目</span>
+                        <span class="hidden-mobile">huggingface之transformers</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -362,8 +354,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/06/04/bad_boy_gpt/" title="GPT2的心情好不好呢？">
-                        <span class="hidden-mobile">GPT2的心情好不好呢？</span>
+                      <a href="/2023/03/29/Mysql/" title="mysql笔记">
+                        <span class="hidden-mobile">mysql笔记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
