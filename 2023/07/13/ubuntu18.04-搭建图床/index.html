@@ -16,22 +16,26 @@
   <meta name="author" content="Zs">
   <meta name="keywords" content="">
   
-    <meta name="description" content="最终对于公式无法正常换行的问题还是没有解决 brew的安装使用脚本安装brew，期间会自动安装git1&#x2F;bin&#x2F;zsh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;gitee.com&#x2F;cunkai&#x2F;HomebrewCN&#x2F;raw&#x2F;master&#x2F;Homebrew.sh)&quot;  brew初始化 添加不受信任的路径1brew -v  git 的初始化12git config --g">
+    <meta name="description" content="前言本来想着拿雨雀当图床使，github是正常加载的，但很不幸的，个人博客是不行的，大致检索了一下，要备案你可真甜蜜的是个小机灵鬼啊 步骤 下载PicGo 配置PicGo上传服务  下载PicGo地址：https:&#x2F;&#x2F;github.com&#x2F;Molunerfinn&#x2F;PicGo&#x2F;releases 安装后出现了App损坏的提示 1sudo xattr -d com.apple.quarantine &amp;q">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo配置记录">
-<meta property="og:url" content="http://shuaizhang1998.github.io/2022/09/21/hello-world/index.html">
+<meta property="og:title" content="ubuntu18.04 搭建图床">
+<meta property="og:url" content="http://shuaizhang1998.github.io/2023/07/13/ubuntu18.04-%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="最终对于公式无法正常换行的问题还是没有解决 brew的安装使用脚本安装brew，期间会自动安装git1&#x2F;bin&#x2F;zsh -c &quot;$(curl -fsSL https:&#x2F;&#x2F;gitee.com&#x2F;cunkai&#x2F;HomebrewCN&#x2F;raw&#x2F;master&#x2F;Homebrew.sh)&quot;  brew初始化 添加不受信任的路径1brew -v  git 的初始化12git config --g">
+<meta property="og:description" content="前言本来想着拿雨雀当图床使，github是正常加载的，但很不幸的，个人博客是不行的，大致检索了一下，要备案你可真甜蜜的是个小机灵鬼啊 步骤 下载PicGo 配置PicGo上传服务  下载PicGo地址：https:&#x2F;&#x2F;github.com&#x2F;Molunerfinn&#x2F;PicGo&#x2F;releases 安装后出现了App损坏的提示 1sudo xattr -d com.apple.quarantine &amp;q">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-09-21T09:32:20.738Z">
-<meta property="article:modified_time" content="2022-09-21T09:32:20.738Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131431872.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/block/DALL.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/block/20230713092541.png">
+<meta property="article:published_time" content="2023-07-13T07:08:38.492Z">
+<meta property="article:modified_time" content="2023-07-13T07:08:38.492Z">
 <meta property="article:author" content="Zs">
-<meta property="article:tag" content="环境搭建">
+<meta property="article:tag" content="环境配置">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131431872.png">
   
   
   
-  <title>hexo配置记录 - Hexo</title>
+  <title>ubuntu18.04 搭建图床 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -196,7 +200,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="hexo配置记录"></span>
+            <span id="subtitle" data-typed-text="ubuntu18.04 搭建图床"></span>
           
         </div>
 
@@ -207,8 +211,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-09-21 17:32" pubdate>
-          2022年9月21日 下午
+        <time datetime="2023-07-13 15:08" pubdate>
+          2023年7月13日 下午
         </time>
       </span>
     
@@ -219,7 +223,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          363 字
+          1.9k 字
         
       </span>
     
@@ -230,7 +234,7 @@
         
         
         
-          4 分钟
+          16 分钟
         
       </span>
     
@@ -268,21 +272,75 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">hexo配置记录</h1>
+            <h1 style="display: none">ubuntu18.04 搭建图床</h1>
             
             
               <div class="markdown-body">
                 
-                <p>最终对于公式无法正常换行的问题还是没有解决</p>
-<h2 id="brew的安装"><a href="#brew的安装" class="headerlink" title="brew的安装"></a>brew的安装</h2><h3 id="使用脚本安装brew，期间会自动安装git"><a href="#使用脚本安装brew，期间会自动安装git" class="headerlink" title="使用脚本安装brew，期间会自动安装git"></a>使用脚本安装brew，期间会自动安装git</h3><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">/bin/</span>zsh -c <span class="hljs-string">&quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</span><br></code></pre></td></tr></table></figure>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本来想着拿雨雀当图床使，github是正常加载的，但很不幸的，个人博客是不行的，大致检索了一下，要备案<del>你可真甜蜜的是个小机灵鬼啊</del></p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ul>
+<li>下载PicGo</li>
+<li>配置PicGo上传服务</li>
+</ul>
+<h1 id="下载PicGo"><a href="#下载PicGo" class="headerlink" title="下载PicGo"></a>下载PicGo</h1><p>地址：<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases">https://github.com/Molunerfinn/PicGo/releases</a></p>
+<p>安装后出现了App损坏的提示</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo xattr -d com.apple.quarantine <span class="hljs-string">&quot;/Applications/PicGo.app&quot;</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="brew初始化-添加不受信任的路径"><a href="#brew初始化-添加不受信任的路径" class="headerlink" title="brew初始化 添加不受信任的路径"></a>brew初始化 添加不受信任的路径</h3><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs ebnf"><span class="hljs-attribute">brew -v</span><br></code></pre></td></tr></table></figure>
+<p>这条命令的作用是删除应用程序的 “com.apple.quarantine” 扩展属性，以便绕过 macOS 的安全限制。在 macOS 上，当你下载并安装一个应用程序时，系统会自动为该应用程序添加 “com.apple.quarantine” 扩展属性，以确保应用程序的来源可信。如果你信任该应用程序，但是系统仍然给出警告，你可以使用这个命令来删除该扩展属性。请注意，使用这个命令需要管理员权限（sudo），并且需要替换命令中的 “&#x2F;Applications&#x2F;PicGo.app” 为你要删除扩展属性的应用程序的路径。确保你了解应用程序的来源，并且信任该应用程序，因为删除扩展属性可能会带来安全风险。</p>
+<h1 id="配置PicGo上传服务"><a href="#配置PicGo上传服务" class="headerlink" title="配置PicGo上传服务"></a>配置PicGo上传服务</h1><h2 id="使用Github"><a href="#使用Github" class="headerlink" title="使用Github"></a>使用Github</h2><p>主要参照这篇文章：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/553533337">https://zhuanlan.zhihu.com/p/553533337</a></p>
+<ul>
+<li>创建一个新的仓库</li>
+<li>设置开发者key</li>
+<li>填信息即可</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131431872.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/block/DALL.png" srcset="/img/loading.gif" lazyload></p>
+<p>typora可以设置图床服务</p>
+<h2 id="使用个人服务器"><a href="#使用个人服务器" class="headerlink" title="使用个人服务器"></a>使用个人服务器</h2><p>github很简单了，还免费，为啥还要搞捏，这要讨论到一片有趣的博文了。</p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/block/20230713092541.png" srcset="/img/loading.gif" lazyload></p>
+<p>基本上要做两件事</p>
+<ul>
+<li><p>配置图片存储服务端</p>
+</li>
+<li><p>配置PicGo配置文件</p>
+<h2 id="图片存储服务器端"><a href="#图片存储服务器端" class="headerlink" title="图片存储服务器端"></a>图片存储服务器端</h2><p>想象一下别人家的图床开头一般都是http:&#x2F;&#x2F;啥的，很明显所谓的图床服务其实就是架设了一个<strong>web服务器</strong>。因此我们需要做两件事情</p>
+<ul>
+<li><p>创建一个物理存储目录</p>
+</li>
+<li><p>使用Nginx做一个路径转发</p>
+<h3 id="物理存储目录的创建"><a href="#物理存储目录的创建" class="headerlink" title="物理存储目录的创建"></a>物理存储目录的创建</h3><p>别在root用户里搞，只有root账户的话创建一个新的用户&lt;username&gt;，放到sudo组里,然后登陆这个用户开始下一步；</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo usermod -aG sudo &lt;username&gt;<br></code></pre></td></tr></table></figure>
 
-<h3 id="git-的初始化"><a href="#git-的初始化" class="headerlink" title="git 的初始化"></a>git 的初始化</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs stylus">git config <span class="hljs-attr">--global</span> user<span class="hljs-selector-class">.name</span> <span class="hljs-string">&quot;Zs&quot;</span><br>git config <span class="hljs-attr">--global</span> user<span class="hljs-selector-class">.email</span> <span class="hljs-string">&quot;1990977934@qq.com&quot;</span><br></code></pre></td></tr></table></figure>
+<p>创建实际存储文件的文件夹，一般就是在你home&#x2F;user下创建；</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">mkdir /home/zs/blog/BlogImage/img2<br>chown -R zs:zs blog<br>chmod -R 777 blog<br></code></pre></td></tr></table></figure>
 
-<h3 id="git命令一条龙"><a href="#git命令一条龙" class="headerlink" title="git命令一条龙"></a>git命令一条龙</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs csharp">git <span class="hljs-keyword">init</span><br>git <span class="hljs-keyword">add</span> .<br>git commit -m <span class="hljs-string">&quot;conclusion&quot;</span><br></code></pre></td></tr></table></figure>
+<h3 id="使用Nginx做路径转发"><a href="#使用Nginx做路径转发" class="headerlink" title="使用Nginx做路径转发"></a>使用Nginx做路径转发</h3><p>坑主要就在这了，很多博客都假定你是有域名和ssl的，但我觉得大多数人应该没兴趣去备案啥的…</p>
+<p>这个部分也有两部组成</p>
+<ul>
+<li><p>安装Nginx</p>
+</li>
+<li><p>修改配置文件</p>
+<h4 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">ubuntu 18.04哈</span><br>sudo apt update<br>sudo apt install nginx<br></code></pre></td></tr></table></figure>
 
-<h3 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h3><figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs csharp">hexo <span class="hljs-keyword">init</span><br>hexo clean<br>hexo s<br>hexo d<br></code></pre></td></tr></table></figure>
+<p>安装完后会自启动，直接开始下一步，修改配置文件</p>
+<h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><p><del>我们没有域名，没有ssl，配置起来很简单。</del></p>
+<p>它的逻辑就是当你请求<a target="_blank" rel="noopener" href="http://host/figname%E6%97%B6%EF%BC%8CNginx%E4%BC%9A%E8%BF%9B%E8%A1%8C%E9%87%8D%E5%AE%9A%E5%90%91%EF%BC%8C%E5%B9%B6%E8%BF%94%E5%9B%9E%E7%BB%99%E4%BD%A0%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD/home/zs/blog/BlogImage/img2/figname%E7%9A%84%E8%B5%84%E6%BA%90">http://host/figname时，Nginx会进行重定向，并返回给你服务器中/home/zs/blog/BlogImage/img2/figname的资源</a></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo vim /etc/nginx/nginx.conf<br></code></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">在http块里加一个server块</span><br>server &#123;<br>                listen 80;<br>                server_name x.x.x.x;<br>                location / &#123; <br>                        alias /home/zs/blog/BlogImage/img2/;<br>                        autoindex on;<br>                        autoindex_exact_size off;<br>                &#125;<br>        &#125;<br></code></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+<h1 id="配置PicGo配置文件"><a href="#配置PicGo配置文件" class="headerlink" title="配置PicGo配置文件"></a>配置PicGo配置文件</h1><p>具体而言你需要准备如下一个json。如果你和我一样没有域名，那我觉得这件事情，泰酷辣！</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs json"><span class="hljs-punctuation">&#123;</span><br><span class="hljs-attr">&quot;pool1&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">&#123;</span><br>    <span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;http://x.x.x.x&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;path&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/&#123;fullName&#125;&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;uploadPath&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;/home/zs/blog/BlogImage/img2/&#123;fullName&#125;&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;host&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;x.x.x.x&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;username&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;--&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;password&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;--&quot;</span><br>  <span class="hljs-punctuation">&#125;</span><br><span class="hljs-punctuation">&#125;</span><br></code></pre></td></tr></table></figure>
+
+
+
+
+
+<p>​</p>
+</li>
+</ul>
 
                 
               </div>
@@ -295,7 +353,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">#环境搭建</a>
+        <a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">#环境配置</a>
       
     </div>
   
@@ -307,8 +365,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>hexo配置记录</div>
-      <div>http://shuaizhang1998.github.io/2022/09/21/hello-world/</div>
+      <div>ubuntu18.04 搭建图床</div>
+      <div>http://shuaizhang1998.github.io/2023/07/13/ubuntu18.04-搭建图床/</div>
     </div>
     <div class="license-meta">
       
@@ -320,7 +378,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年9月21日</div>
+          <div>2023年7月13日</div>
         </div>
       
       
@@ -336,18 +394,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/09/21/20220921/" title="数字三角形">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数字三角形</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/21/%E5%88%9D%E5%85%A5cuda/" title="初识cuda">
-                        <span class="hidden-mobile">初识cuda</span>
+                      <a href="/2023/06/20/vim%E8%BF%9C%E7%A8%8B%E6%8B%B7%E8%B4%9D/" title="vim远程拷贝">
+                        <span class="hidden-mobile">vim远程拷贝</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
