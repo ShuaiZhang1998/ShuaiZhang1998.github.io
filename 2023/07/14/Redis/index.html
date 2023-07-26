@@ -16,29 +16,18 @@
   <meta name="author" content="Zs">
   <meta name="keywords" content="">
   
-    <meta name="description" content="初识RedisRedis是一个非关系型（NoSql）数据库，内部的数据以Key：Value的形式存储。     SQL（关系型数据库） NoSQL（非关系型数据库）    数据结构 结构化的二维表 非结构化（Redis[K,V类型]，elsticsearch[文档类型]）   数据关联 可以通过外键进行关联 没有关联   查询方式 SQL标准化查询，不同的关系型数据库语法不会相差很多 不同的数据库">
+    <meta name="description" content="初识Redis Redis是一个非关系型（NoSql）数据库，内部的数据以Key：Value的形式存储。      SQL（关系型数据库） NoSQL（非关系型数据库）     数据结构 结构化的二维表 非结构化（Redis[K,V类型]，elsticsearch[文档类型]）   数据关联 可以通过外键进行关联 没有关联   查询方式 SQL标准化查询，不同的关系型数据库语法不会相差很多 不同的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Redis入门">
 <meta property="og:url" content="http://shuaizhang1998.github.io/2023/07/14/Redis/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="初识RedisRedis是一个非关系型（NoSql）数据库，内部的数据以Key：Value的形式存储。     SQL（关系型数据库） NoSQL（非关系型数据库）    数据结构 结构化的二维表 非结构化（Redis[K,V类型]，elsticsearch[文档类型]）   数据关联 可以通过外键进行关联 没有关联   查询方式 SQL标准化查询，不同的关系型数据库语法不会相差很多 不同的数据库">
+<meta property="og:description" content="初识Redis Redis是一个非关系型（NoSql）数据库，内部的数据以Key：Value的形式存储。      SQL（关系型数据库） NoSQL（非关系型数据库）     数据结构 结构化的二维表 非结构化（Redis[K,V类型]，elsticsearch[文档类型]）   数据关联 可以通过外键进行关联 没有关联   查询方式 SQL标准化查询，不同的关系型数据库语法不会相差很多 不同的">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504153600968.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504153649537.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504155516438.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504155543108.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504160543805.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504160959473.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504172347048.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504173559943.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504175301101.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504185545309.png">
 <meta property="article:published_time" content="2023-07-14T14:12:28.655Z">
 <meta property="article:modified_time" content="2023-07-14T14:13:18.632Z">
 <meta property="article:author" content="Zs">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504153600968.png">
   
   
   
@@ -230,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.3k 字
+          2.5k 字
         
       </span>
     
@@ -241,7 +230,7 @@
         
         
         
-          20 分钟
+          22 分钟
         
       </span>
     
@@ -284,116 +273,194 @@
             
               <div class="markdown-body">
                 
-                <h2 id="初识Redis"><a href="#初识Redis" class="headerlink" title="初识Redis"></a>初识Redis</h2><p>Redis是一个非关系型（NoSql）数据库，内部的数据以<strong>Key：Value的形式存储</strong>。</p>
+                <h2 id="初识redis">初识Redis</h2>
+<p>Redis是一个非关系型（NoSql）数据库，内部的数据以<strong>Key：Value的形式存储</strong>。</p>
 <table>
+
 <thead>
-<tr>
-<th align="left"></th>
+<tr class="header">
+<th style="text-align: left;"></th>
 <th>SQL（关系型数据库）</th>
 <th>NoSQL（非关系型数据库）</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">数据结构</td>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">数据结构</td>
 <td>结构化的二维表</td>
 <td>非结构化（Redis[K,V类型]，elsticsearch[文档类型]）</td>
 </tr>
-<tr>
-<td align="left">数据关联</td>
+<tr class="even">
+<td style="text-align: left;">数据关联</td>
 <td>可以通过外键进行关联</td>
 <td>没有关联</td>
 </tr>
-<tr>
-<td align="left">查询方式</td>
+<tr class="odd">
+<td style="text-align: left;">查询方式</td>
 <td>SQL标准化查询，不同的关系型数据库语法不会相差很多</td>
 <td>不同的数据库语法标准不同</td>
 </tr>
-<tr>
-<td align="left">事务特性</td>
+<tr class="even">
+<td style="text-align: left;">事务特性</td>
 <td>ACID</td>
 <td>基本的保证</td>
 </tr>
-<tr>
-<td align="left">存储方式</td>
+<tr class="odd">
+<td style="text-align: left;">存储方式</td>
 <td>存储在硬盘中</td>
 <td>存储在内存中</td>
 </tr>
-<tr>
-<td align="left">拓展性</td>
+<tr class="even">
+<td style="text-align: left;">拓展性</td>
 <td>数据的分布式存储一般需要借助第三方插件来实现</td>
 <td>一般天然支持数据的分布式存储，例如elasticsearch每个文档都有一个唯一的ID，对应固定的节点存储。</td>
 </tr>
-<tr>
-<td align="left">使用场景</td>
+<tr class="odd">
+<td style="text-align: left;">使用场景</td>
 <td>数据结构固定，对数据安全性，一致性高</td>
 <td>对性能要求高，数据结构不固定，对安全性要求不高</td>
 </tr>
-</tbody></table>
-<p>原子性（Atomicity）：指事务是一个原子操作，要么全部执行，要么全部不执行，事务中的所有操作都是不可分割的整体。<br>一致性（Consistency）：指事务执行前后，数据库的状态必须保持一致，数据库约束不被破坏，如外键约束、唯一约束、默认约束等。<br>隔离性（Isolation）：指数据库系统在处理多个事务并发执行时，要保证相互之间彼此隔离，避免事务间产生相互干扰。<br>持久性（Durability）：指事务一旦提交，则数据库系统中的数据会被永久保存，并不因系统故障而丢失</p>
-<p><strong>特征：</strong><br>键值 (key-value）型，value支持多种不同数据结构，功能丰富<br>单线程，每个命令具备原子性（只使用一个线程来执行所有的命令和操作请求）<br>低延迟，速度快(基于内存、IO多路复用、良好的编码）（创建一个线程同时监听多个客户端的请求）<br>支持数据持久化（断电不丢失）<br>支持主从集群、分片集群<br>支持多浯言客戸端</p>
-<p>Redis 支持主从集群和分片集群，它们都是用于解决 Redis 单机容量和性能瓶颈问题的方案。</p>
-<ol>
+</tbody>
+</table>
+<p>原子性（Atomicity）：指事务是一个原子操作，要么全部执行，要么全部不执行，事务中的所有操作都是不可分割的整体。
+一致性（Consistency）：指事务执行前后，数据库的状态必须保持一致，数据库约束不被破坏，如外键约束、唯一约束、默认约束等。
+隔离性（Isolation）：指数据库系统在处理多个事务并发执行时，要保证相互之间彼此隔离，避免事务间产生相互干扰。
+持久性（Durability）：指事务一旦提交，则数据库系统中的数据会被永久保存，并不因系统故障而丢失</p>
+<p><strong>特征：</strong> 键值
+(key-value）型，value支持多种不同数据结构，功能丰富
+单线程，每个命令具备原子性（只使用一个线程来执行所有的命令和操作请求）
+低延迟，速度快(基于内存、IO多路复用、良好的编码）（创建一个线程同时监听多个客户端的请求）
+支持数据持久化（断电不丢失） 支持主从集群、分片集群 支持多浯言客戸端</p>
+<p>Redis 支持主从集群和分片集群，它们都是用于解决 Redis
+单机容量和性能瓶颈问题的方案。</p>
+<ol type="1">
 <li>主从集群</li>
 </ol>
-<p>Redis 主从集群是一种通过<strong>主节点</strong>与<strong>多个从节点</strong>实现<strong>数据同步</strong>和<strong>备份</strong>的方式。<strong>主节点</strong>负责<strong>接收和处理</strong>客户端的所有<strong>请求</strong>，<strong>从节点</strong>负责<strong>复制主节点的数据</strong>并<strong>提供查询服务</strong>。主从集群可以提高 Redis 的容量和性能，同时也可以保证数据的高可用性和故障恢复能力。</p>
-<ol start="2">
+<p>Redis
+主从集群是一种通过<strong>主节点</strong>与<strong>多个从节点</strong>实现<strong>数据同步</strong>和<strong>备份</strong>的方式。<strong>主节点</strong>负责<strong>接收和处理</strong>客户端的所有<strong>请求</strong>，<strong>从节点</strong>负责<strong>复制主节点的数据</strong>并<strong>提供查询服务</strong>。主从集群可以提高
+Redis 的容量和性能，同时也可以保证数据的高可用性和故障恢复能力。</p>
+<ol start="2" type="1">
 <li>分片集群</li>
 </ol>
-<p>Redis 分片集群是一种通过<strong>将大数据集</strong>分散到多个服务器上来<strong>解决 Redis 单机容量限制</strong>的方案。在 Redis 分片集群中，<strong>将数据划分为多个分片</strong>（Shard），每个分片可以在<strong>不同</strong>的物理服务器上运行，从而提高 Redis 的<strong>并发能力和处理能力</strong>。分片集群可以实现网站的横向扩展，同时也可以提供高可用性。</p>
+<p>Redis
+分片集群是一种通过<strong>将大数据集</strong>分散到多个服务器上来<strong>解决
+Redis 单机容量限制</strong>的方案。在 Redis
+分片集群中，<strong>将数据划分为多个分片</strong>（Shard），每个分片可以在<strong>不同</strong>的物理服务器上运行，从而提高
+Redis
+的<strong>并发能力和处理能力</strong>。分片集群可以实现网站的横向扩展，同时也可以提供高可用性。</p>
 <p>两者的区别：</p>
-<p>主从集群是为了<strong>防止单点故障</strong>，提高 Redis 的高可用性和故障恢复能力；而分片集群则是为了<strong>解决单机容量和性能瓶颈</strong>问题。</p>
-<p>一般来说，主从集群适用于读取&#x2F;写入比例比较平衡的场景，而分片集群则适用于读写比例比较悬殊的场景，例如写入操作的比例较大并且需要高吞吐量的场合。</p>
-<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>redis配置文件目录</p>
+<p>主从集群是为了<strong>防止单点故障</strong>，提高 Redis
+的高可用性和故障恢复能力；而分片集群则是为了<strong>解决单机容量和性能瓶颈</strong>问题。</p>
+<p>一般来说，主从集群适用于读取/写入比例比较平衡的场景，而分片集群则适用于读写比例比较悬殊的场景，例如写入操作的比例较大并且需要高吞吐量的场合。</p>
+<h2 id="配置">配置</h2>
+<p>redis配置文件目录</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">vim /etc/redis/redis.conf<br></code></pre></td></tr></table></figure>
-
 <p>启动Redis</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">redis-server /etc/redis/redis.conf<br></code></pre></td></tr></table></figure>
-
 <p>查看redis</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim"><span class="hljs-keyword">ps</span> -ef | <span class="hljs-keyword">grep</span> redis<br></code></pre></td></tr></table></figure>
-
 <p>连接redis</p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">redis</span>-cli -h <span class="hljs-number">116.204.76.47</span> -p <span class="hljs-number">6379</span> -a <span class="hljs-number">123456789</span><br></code></pre></td></tr></table></figure>
-
-
-
-<h2 id="常见数据结构"><a href="#常见数据结构" class="headerlink" title="常见数据结构"></a>常见数据结构</h2><p><strong>KEY的层级结构</strong></p>
+<h2 id="常见数据结构">常见数据结构</h2>
+<p><strong>KEY的层级结构</strong></p>
 <figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">set</span> user:id:<span class="hljs-number">1</span> &#x27;&#123;<span class="hljs-string">&quot;id&quot;</span>:<span class="hljs-number">1</span>, <span class="hljs-string">&quot;name&quot;</span>:<span class="hljs-string">&quot;zs&quot;</span>, <span class="hljs-string">&quot;phone&quot;</span>:<span class="hljs-string">&quot;123 &quot;</span>&#125;&#x27; <br></code></pre></td></tr></table></figure>
-
-
-
-<h3 id="String类型"><a href="#String类型" class="headerlink" title="String类型"></a>String类型</h3><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504153600968.png" srcset="/img/loading.gif" lazyload alt="image-20230504153600968"></p>
-<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504153649537.png" srcset="/img/loading.gif" lazyload alt="image-20230504153649537"></p>
-<h3 id="Hash类型"><a href="#Hash类型" class="headerlink" title="Hash类型"></a>Hash类型</h3><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504155516438.png" srcset="/img/loading.gif" lazyload alt="image-20230504155516438"></p>
-<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504155543108.png" srcset="/img/loading.gif" lazyload alt="image-20230504155543108"></p>
-<h3 id="List类型"><a href="#List类型" class="headerlink" title="List类型"></a>List类型</h3><p>可以理解为一个双向链表，有序插入删除快，但查找慢。</p>
-<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504160543805.png" srcset="/img/loading.gif" lazyload alt="image-20230504160543805"></p>
-<h3 id="Set类型"><a href="#Set类型" class="headerlink" title="Set类型"></a>Set类型</h3><p>元素不可以重复，查找性能高</p>
-<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504160959473.png" srcset="/img/loading.gif" lazyload alt="image-20230504160959473"></p>
-<h3 id="SotredSet"><a href="#SotredSet" class="headerlink" title="SotredSet"></a>SotredSet</h3><p>有序集合，在set 的基础上给每个元素多存了一个分数，类似于 vallue 类型为整型的 Hashvap。特点是有序、查找性能高，适合用于排行榜、统计 TopN。</p>
-<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504172347048.png" srcset="/img/loading.gif" lazyload alt="image-20230504172347048"></p>
-<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><p>redis 官网命令集：<a target="_blank" rel="noopener" href="https://redis.io/commands/%EF%BC%8C%E4%B8%AD%E6%96%87%E7%89%88%EF%BC%9Ahttp://www.redis.cn/commands.html">https://redis.io/commands/，中文版：http://www.redis.cn/commands.html</a></p>
-<h3 id="通用命令"><a href="#通用命令" class="headerlink" title="通用命令"></a>通用命令</h3><p><strong>通用命令可以操作所有数据结构:help @generic</strong></p>
+<h3 id="string类型">String类型</h3>
+<figure>
+<img
+src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504153600968.png" srcset="/img/loading.gif" lazyload
+alt="image-20230504153600968" />
+<figcaption aria-hidden="true">image-20230504153600968</figcaption>
+</figure>
+<figure>
+<img
+src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504153649537.png" srcset="/img/loading.gif" lazyload
+alt="image-20230504153649537" />
+<figcaption aria-hidden="true">image-20230504153649537</figcaption>
+</figure>
+<h3 id="hash类型">Hash类型</h3>
+<figure>
+<img
+src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504155516438.png" srcset="/img/loading.gif" lazyload
+alt="image-20230504155516438" />
+<figcaption aria-hidden="true">image-20230504155516438</figcaption>
+</figure>
+<figure>
+<img
+src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504155543108.png" srcset="/img/loading.gif" lazyload
+alt="image-20230504155543108" />
+<figcaption aria-hidden="true">image-20230504155543108</figcaption>
+</figure>
+<h3 id="list类型">List类型</h3>
+<p>可以理解为一个双向链表，有序插入删除快，但查找慢。</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504160543805.png" srcset="/img/loading.gif" lazyload
+alt="image-20230504160543805" />
+<figcaption aria-hidden="true">image-20230504160543805</figcaption>
+</figure>
+<h3 id="set类型">Set类型</h3>
+<p>元素不可以重复，查找性能高</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504160959473.png" srcset="/img/loading.gif" lazyload
+alt="image-20230504160959473" />
+<figcaption aria-hidden="true">image-20230504160959473</figcaption>
+</figure>
+<h3 id="sotredset">SotredSet</h3>
+<p>有序集合，在set 的基础上给每个元素多存了一个分数，类似于 vallue
+类型为整型的 Hashvap。特点是有序、查找性能高，适合用于排行榜、统计
+TopN。</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504172347048.png" srcset="/img/loading.gif" lazyload
+alt="image-20230504172347048" />
+<figcaption aria-hidden="true">image-20230504172347048</figcaption>
+</figure>
+<h2 id="命令">命令</h2>
+<p>redis
+官网命令集：https://redis.io/commands/，中文版：http://www.redis.cn/commands.html</p>
+<h3 id="通用命令">通用命令</h3>
+<p><strong>通用命令可以操作所有数据结构:help <span class="citation"
+data-cites="generic">@generic</span></strong></p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs bash">不建议使用KEYS<br><br>KEYS *<br><br>KEYS *name*<br><br>删除<br>DEL name age<br><br>判存<br>exists name age<br><br>设置存在时间<br>expire age 20<br><br>查看存在时间-1为永久<br>ttl age<br></code></pre></td></tr></table></figure>
-
-
-
-<h3 id="Redis-Java客户端"><a href="#Redis-Java客户端" class="headerlink" title="Redis Java客户端"></a>Redis Java客户端</h3><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504173559943.png" srcset="/img/loading.gif" lazyload alt="image-20230504173559943"></p>
-<p>Jedis 的命令和原生recis 命令行的命令一致，学习成本最低（注意它是线程不安全的，通常配合连接池使用）；</p>
-<p>Lettuce 和 Spring 兼容最好(Spring Data Redis 默认集成）、基于 Netty 实现，性能最高；</p>
-<p>Redisson 提供了和 Java 集合用法一致的分布式集合，适用于更复杂的业务场景。</p>
-<h4 id="SpringDataRedis"><a href="#SpringDataRedis" class="headerlink" title="SpringDataRedis"></a>SpringDataRedis</h4><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504175301101.png" srcset="/img/loading.gif" lazyload alt="image-20230504175301101"></p>
-<p><a target="_blank" rel="noopener" href="https://spring.io/projects/spring-data-redis#overview">https://spring.io/projects/spring-data-redis#overview</a></p>
+<h3 id="redis-java客户端">Redis Java客户端</h3>
+<figure>
+<img
+src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504173559943.png" srcset="/img/loading.gif" lazyload
+alt="image-20230504173559943" />
+<figcaption aria-hidden="true">image-20230504173559943</figcaption>
+</figure>
+<p>Jedis 的命令和原生recis
+命令行的命令一致，学习成本最低（注意它是线程不安全的，通常配合连接池使用）；</p>
+<p>Lettuce 和 Spring 兼容最好(Spring Data Redis 默认集成）、基于 Netty
+实现，性能最高；</p>
+<p>Redisson 提供了和 Java
+集合用法一致的分布式集合，适用于更复杂的业务场景。</p>
+<h4 id="springdataredis">SpringDataRedis</h4>
+<figure>
+<img
+src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504175301101.png" srcset="/img/loading.gif" lazyload
+alt="image-20230504175301101" />
+<figcaption aria-hidden="true">image-20230504175301101</figcaption>
+</figure>
+<p>https://spring.io/projects/spring-data-redis#overview</p>
 <p>开启Redis需要三件事：</p>
 <p>1.引入依赖</p>
 <p>2.编写配置文件</p>
 <p>3.在spring-boot启动项注释掉一行代码</p>
-<p>Redis Template 默认使用 JDK <strong>原生</strong>序列化器，<strong>可读性差</strong>、内存占用大，因此可以用以下两种方式来改变序列化机制：</p>
-<ol>
-<li>自定义 Redis Template，指定key 和value 的序列化器</li>
-<li>使用自带的 StringRedis Template， key 和value 都默认使用 String 序列化器，仅支持写入 String 类型的key 和 value。因此需要自己将对象序列化成 String 来写入 Redis， 从Redis 读出数据时也要手动反序列化。</li>
-</ol>
-<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504185545309.png" srcset="/img/loading.gif" lazyload alt="image-20230504185545309"></p>
+<p>Redis Template 默认使用 JDK
+<strong>原生</strong>序列化器，<strong>可读性差</strong>、内存占用大，因此可以用以下两种方式来改变序列化机制：
+1. 自定义 Redis Template，指定key 和value 的序列化器 2. 使用自带的
+StringRedis Template， key 和value 都默认使用 String
+序列化器，仅支持写入 String 类型的key 和
+value。因此需要自己将对象序列化成 String 来写入 Redis， 从Redis
+读出数据时也要手动反序列化。</p>
+<figure>
+<img
+src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/image-20230504185545309.png" srcset="/img/loading.gif" lazyload
+alt="image-20230504185545309" />
+<figcaption aria-hidden="true">image-20230504185545309</figcaption>
+</figure>
 
                 
               </div>
