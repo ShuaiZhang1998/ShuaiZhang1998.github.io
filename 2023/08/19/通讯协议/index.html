@@ -24,7 +24,7 @@
 <meta property="og:description" content="通讯协议 小S同学每天都要和他的女朋友小B同学打电话，搞的小N同学和小M同学都十分的气愤，因为没法好好睡觉。能让NM两位同学能够在应有的年龄得到应有的教育的原因之一，就是通讯协议的存在。在我写这篇博文之前，我只知道HTTP，TCP，UDP，FTP，FMSTP，SSH等协议，然而从来没想过HDMI居然也是通讯协议，Wi-Fi也是通讯协议啊？。写这篇博文的目的有两点，希望能够从一个更高的层面理解什么是">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-08-19T09:52:04.124Z">
-<meta property="article:modified_time" content="2023-08-29T02:08:54.922Z">
+<meta property="article:modified_time" content="2023-10-07T15:39:12.472Z">
 <meta property="article:author" content="Zs">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary_large_image">
@@ -219,7 +219,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8k 字
+          8.3k 字
         
       </span>
     
@@ -230,7 +230,7 @@
         
         
         
-          67 分钟
+          70 分钟
         
       </span>
     
@@ -464,16 +464,23 @@ TLS，从而提供了强加密和更好的性能。</li>
 <p>HTTPS协议是通过在HTTP协议的上层添加了一层加密协议，实现了对HTTP请求和响应的加密。</p>
 <p>HTTPS的加密协议使用了SSL/TLS，其中SSL已经被放弃使用，因为其本身存在许多安全漏洞。</p>
 <h4 id="握手过程">握手过程</h4>
-<p>1.客户端向向服务端发送一个ClientHello请求，包含了使用的加密算法，随机生成的数据，以及使用的TLS协议等。</p>
-<p>2.服务端向客户端回复一个ServerHello请求，包含了之前随机生成的数据</p>
-<p>3.服务端向客户端提供由第三方机构颁发的证书，证书包含共钥。</p>
-<p>4.客户端验证证书是否在期限内，目标域是否与证书一致</p>
-<p>5.客户端生成一个预主密钥，使用服务端的证书公钥加密后发送给服务端。</p>
-<p>6.服务端使用公钥对预主密钥进行解密，此时服务端和客户端都得知了预主密钥。</p>
-<p>7.服务端和客户端会使用之前生成的随机数据以及预主密钥生成一个双方都可以确定的会话密钥，这个会话密钥会保持到本次链接关闭之前。</p>
-<p>8.客户端发送一个Finished消息给服务端，服务端解密。</p>
-<p>9.服务端响应给一个Finished消息给客户端，客户端解密。</p>
-<p>10.至此，HTTPS链接建立成功。</p>
+<ol type="1">
+<li><p><strong>客户端的初始请求</strong>：客户端发送一个"ClientHello"消息给服务端。这个消息中包含了客户端支持的加密算法列表、一个客户端随机数(Client
+Random)、以及客户端支持的TLS版本。</p></li>
+<li><p><strong>服务端的响应</strong>：服务端回复一个"ServerHello"消息给客户端。这个消息中选择了一种客户端所提供的加密算法、一个服务端随机数(Server
+Random)、以及双方要使用的TLS版本。</p></li>
+<li><p><strong>服务端的证书</strong>：服务端发送其数字证书给客户端。这个证书由第三方权威认证中心签名，并且包含服务端的公钥。</p></li>
+<li><p><strong>客户端验证证书</strong>：客户端验证服务端的证书，确保它是由一个受信任的证书颁发机构签名的、仍然有效（未过期），且与服务端的域名匹配。</p></li>
+<li><p><strong>预主密钥的生成与发送</strong>：客户端生成一个预主密钥(Pre-Master
+Secret)，并使用服务端证书中的公钥对它进行加密，然后发送给服务端。</p></li>
+<li><p><strong>服务端解密预主密钥</strong>：服务端使用其私钥解密从客户端接收到的加密的预主密钥，从而获取原始的预主密钥。</p></li>
+<li><p><strong>会话密钥的计算</strong>：客户端和服务端都使用预主密钥和之前的随机数（Client
+Random和Server
+Random）来计算会话密钥。这个会话密钥将被用于加密和解密整个会话的数据。</p></li>
+<li><p><strong>客户端的确认消息</strong>：客户端发送一个"Finished"消息给服务端，消息内容是使用会话密钥加密的。</p></li>
+<li><p><strong>服务端的确认消息</strong>：服务端回复一个"Finished"消息给客户端，同样使用会话密钥加密。</p></li>
+<li><p><strong>安全会话的开始</strong>：双方现在都有了相同的会话密钥，并且已经确认了彼此的身份。他们可以开始安全地交换加密的数据。</p></li>
+</ol>
 <h2 id="tcpudp">TCP/UDP</h2>
 <p>同样的，在开始之前，我们首先要确定TCP/UDP协议通讯的双方是谁。我们已经知道了HTTP/HTTPS协议是服务于客户端和服务端的，并且通常情况下，客户端和服务端都是一些较为重型的应用，譬如浏览器、服务器。</p>
 <p>TCP/UDP协议是作为两个进程之间通信的桥梁，这是一个很细的粒度。</p>
