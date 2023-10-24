@@ -16,18 +16,116 @@
   <meta name="author" content="Zs">
   <meta name="keywords" content="">
   
-    <meta name="description" content="既然解决了图床问题，那就把笔记搬一搬吧～ Mysql MySql是关系型数据库，又多张互相连接的二维表组成的数据库   image-20230313160826461  SQL通用语法   image-20230313161021759  SQL分类   image-20230313161203704  DDL语言 12345678910111213141516171819202122# 展示所有">
+    <meta name="description" content="既然解决了图床问题，那就把笔记搬一搬吧～ MysqlMySql是关系型数据库，又多张互相连接的二维表组成的数据库  SQL通用语法 SQL分类 DDL语言12345678910111213141516171819202122# 展示所有数据库SHOW DATABASES;# 查询当前数据库SELECT DATABASE();# 创建数据库CREATE DATABASE IF NOT EXISTS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql笔记">
 <meta property="og:url" content="http://shuaizhang1998.github.io/2023/03/29/Mysql/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="既然解决了图床问题，那就把笔记搬一搬吧～ Mysql MySql是关系型数据库，又多张互相连接的二维表组成的数据库   image-20230313160826461  SQL通用语法   image-20230313161021759  SQL分类   image-20230313161203704  DDL语言 12345678910111213141516171819202122# 展示所有">
+<meta property="og:description" content="既然解决了图床问题，那就把笔记搬一搬吧～ MysqlMySql是关系型数据库，又多张互相连接的二维表组成的数据库  SQL通用语法 SQL分类 DDL语言12345678910111213141516171819202122# 展示所有数据库SHOW DATABASES;# 查询当前数据库SELECT DATABASE();# 创建数据库CREATE DATABASE IF NOT EXISTS">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131521443.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131522225.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131522918.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131522842.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131523670.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131523370.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131523162.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131524384.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131524475.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131525069.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131524102.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131524624.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131524921.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131525632.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131525337.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131525223.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131526982.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131526805.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131526419.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131526055.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131527738.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131527385.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131527790.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131528934.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131528673.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131528653.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131528237.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131528635.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131528466.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131529320.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131529111.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131529239.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131529001.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131529855.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131529115.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131531885.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131531438.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131531980.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131531734.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131532200.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131533132.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131534131.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131534296.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131534617.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131534093.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131534509.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131535059.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131535702.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131535225.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131535729.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131535244.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131536905.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131536624.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131536073.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131536004.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131537528.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131537754.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131537842.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131537673.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202309241112131.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202309241112958.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131538505.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131538454.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131538770.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131538536.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131538894.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131539386.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131539572.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131539109.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131539408.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131539934.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131540105.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131540919.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131540405.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131540909.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131540410.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131541524.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131541588.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131541224.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131541759.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131542038.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131542173.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131542722.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131542704.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131542170.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131543486.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131545924.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131544553.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131544106.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131544850.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131544658.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131544989.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131544653.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131543787.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131543956.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131543885.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131543070.png">
 <meta property="article:published_time" content="2023-03-29T03:01:35.254Z">
 <meta property="article:modified_time" content="2023-09-24T03:13:05.687Z">
 <meta property="article:author" content="Zs">
 <meta property="article:tag" content="笔记">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131521443.png">
   
   
   
@@ -219,7 +317,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          6.3k 字
+          4.5k 字
         
       </span>
     
@@ -230,7 +328,7 @@
         
         
         
-          53 分钟
+          38 分钟
         
       </span>
     
@@ -274,571 +372,146 @@
               <div class="markdown-body">
                 
                 <p>既然解决了图床问题，那就把笔记搬一搬吧～</p>
-<h1 id="mysql">Mysql</h1>
-<p>MySql是关系型数据库，又多张互相连接的二维表组成的数据库</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131521443.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313160826461" />
-<figcaption aria-hidden="true">image-20230313160826461</figcaption>
-</figure>
-<h2 id="sql通用语法">SQL通用语法</h2>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131522225.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313161021759" />
-<figcaption aria-hidden="true">image-20230313161021759</figcaption>
-</figure>
-<h2 id="sql分类">SQL分类</h2>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131522918.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313161203704" />
-<figcaption aria-hidden="true">image-20230313161203704</figcaption>
-</figure>
-<h3 id="ddl语言">DDL语言</h3>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs sql"># 展示所有数据库<br><span class="hljs-keyword">SHOW</span> DATABASES;<br># 查询当前数据库<br><span class="hljs-keyword">SELECT</span> DATABASE();<br># 创建数据库<br><span class="hljs-keyword">CREATE</span> DATABASE IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> MYDATABSE <span class="hljs-keyword">DEFAULT</span> CHARSET utf8mb4 <span class="hljs-keyword">COLLATE</span> 排序规则;<br># 删除数据库<br><span class="hljs-keyword">DROP</span> DATABASE IF <span class="hljs-keyword">EXISTS</span> MYDATABSE;<br># 使用数据库<br>USE MYDATABASE;<br><br># 查询当前数据库所有表<span class="hljs-comment">--需要先进入某个数据库</span><br><span class="hljs-keyword">SHOW</span> TABLES;<br># 查询表结构<br><span class="hljs-keyword">DESC</span> 表名;<br># 查询指定表的建表语句<br><span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> 表名;<br><br>#建表语句<br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> 表名(<br>name <span class="hljs-type">INT</span> COMMENT <span class="hljs-string">&#x27;名字&#x27;</span>,<br>age <span class="hljs-type">INT</span> COMMENT ‘年龄’) COMMENT <span class="hljs-string">&#x27;用户表&#x27;</span>;<br></code></pre></td></tr></table></figure>
+<h1 id="Mysql"><a href="#Mysql" class="headerlink" title="Mysql"></a>Mysql</h1><p>MySql是关系型数据库，又多张互相连接的二维表组成的数据库</p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131521443.png" srcset="/img/loading.gif" lazyload alt="image-20230313160826461"></p>
+<h2 id="SQL通用语法"><a href="#SQL通用语法" class="headerlink" title="SQL通用语法"></a>SQL通用语法</h2><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131522225.png" srcset="/img/loading.gif" lazyload alt="image-20230313161021759"></p>
+<h2 id="SQL分类"><a href="#SQL分类" class="headerlink" title="SQL分类"></a>SQL分类</h2><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131522918.png" srcset="/img/loading.gif" lazyload alt="image-20230313161203704"></p>
+<h3 id="DDL语言"><a href="#DDL语言" class="headerlink" title="DDL语言"></a>DDL语言</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs sql"># 展示所有数据库<br><span class="hljs-keyword">SHOW</span> DATABASES;<br># 查询当前数据库<br><span class="hljs-keyword">SELECT</span> DATABASE();<br># 创建数据库<br><span class="hljs-keyword">CREATE</span> DATABASE IF <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">EXISTS</span> MYDATABSE <span class="hljs-keyword">DEFAULT</span> CHARSET utf8mb4 <span class="hljs-keyword">COLLATE</span> 排序规则;<br># 删除数据库<br><span class="hljs-keyword">DROP</span> DATABASE IF <span class="hljs-keyword">EXISTS</span> MYDATABSE;<br># 使用数据库<br>USE MYDATABASE;<br><br># 查询当前数据库所有表<span class="hljs-comment">--需要先进入某个数据库</span><br><span class="hljs-keyword">SHOW</span> TABLES;<br># 查询表结构<br><span class="hljs-keyword">DESC</span> 表名;<br># 查询指定表的建表语句<br><span class="hljs-keyword">SHOW</span> <span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> 表名;<br><br>#建表语句<br><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> 表名(<br>name <span class="hljs-type">INT</span> COMMENT <span class="hljs-string">&#x27;名字&#x27;</span>,<br>age <span class="hljs-type">INT</span> COMMENT ‘年龄’) COMMENT <span class="hljs-string">&#x27;用户表&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
 <p><strong>DDL表数据类型</strong></p>
 <p>数值类型，字符串类型，日期时间类型</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131522842.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313162833695" />
-<figcaption aria-hidden="true">image-20230313162833695</figcaption>
-</figure>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131522842.png" srcset="/img/loading.gif" lazyload alt="image-20230313162833695"></p>
 <p>默认是有符号数</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs sql">age TINYINT UNSIGNED<br>score <span class="hljs-keyword">double</span>(<span class="hljs-number">4</span>,<span class="hljs-number">1</span>)<br></code></pre></td></tr></table></figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131523670.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313163251268" />
-<figcaption aria-hidden="true">image-20230313163251268</figcaption>
-</figure>
+
+
+
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131523670.png" srcset="/img/loading.gif" lazyload alt="image-20230313163251268"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-type">char</span>(<span class="hljs-number">10</span>) <span class="hljs-comment">--性能高   不足的位置会使用空格补齐</span><br><span class="hljs-type">varchar</span>(<span class="hljs-number">10</span>)<span class="hljs-comment">--性能低，在使用时需要计算长度 存多少占多少空间</span><br><br><span class="hljs-type">varchar</span>(<span class="hljs-number">10</span>) <span class="hljs-comment">--用户名 更适合使用其存储，因为位数是未知的</span><br><span class="hljs-type">char</span>(<span class="hljs-number">1</span>) <span class="hljs-comment">--性别 更适合使用其存储，因为位数是固定的</span><br></code></pre></td></tr></table></figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131523370.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313163834904" />
-<figcaption aria-hidden="true">image-20230313163834904</figcaption>
-</figure>
+
+
+
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131523370.png" srcset="/img/loading.gif" lazyload alt="image-20230313163834904"></p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs">最后一个不太常用<br></code></pre></td></tr></table></figure>
+
+
+
 <p><strong>对表字段进行修改以及修改表名</strong></p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131523162.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313165414005" />
-<figcaption aria-hidden="true">image-20230313165414005</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131524384.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313165427697" />
-<figcaption aria-hidden="true">image-20230313165427697</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131524475.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313165439807" />
-<figcaption aria-hidden="true">image-20230313165439807</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131525069.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313165516777" />
-<figcaption aria-hidden="true">image-20230313165516777</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131524102.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313165536837" />
-<figcaption aria-hidden="true">image-20230313165536837</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131524624.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313165602784" />
-<figcaption aria-hidden="true">image-20230313165602784</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131524921.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313165651749" />
-<figcaption aria-hidden="true">image-20230313165651749</figcaption>
-</figure>
-<h3 id="dml语言">DML语言</h3>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131525632.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313170203733" />
-<figcaption aria-hidden="true">image-20230313170203733</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131525337.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313170349992" />
-<figcaption aria-hidden="true">image-20230313170349992</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131525223.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313170439656" />
-<figcaption aria-hidden="true">image-20230313170439656</figcaption>
-</figure>
-<h3 id="dql语句">DQL语句</h3>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131526982.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313170812430" />
-<figcaption aria-hidden="true">image-20230313170812430</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131526805.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313182101046" />
-<figcaption aria-hidden="true">image-20230313182101046</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131526419.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313182302311" />
-<figcaption aria-hidden="true">image-20230313182302311</figcaption>
-</figure>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131523162.png" srcset="/img/loading.gif" lazyload alt="image-20230313165414005"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131524384.png" srcset="/img/loading.gif" lazyload alt="image-20230313165427697"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131524475.png" srcset="/img/loading.gif" lazyload alt="image-20230313165439807"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131525069.png" srcset="/img/loading.gif" lazyload alt="image-20230313165516777"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131524102.png" srcset="/img/loading.gif" lazyload alt="image-20230313165536837"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131524624.png" srcset="/img/loading.gif" lazyload alt="image-20230313165602784"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131524921.png" srcset="/img/loading.gif" lazyload alt="image-20230313165651749"></p>
+<h3 id="DML语言"><a href="#DML语言" class="headerlink" title="DML语言"></a>DML语言</h3><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131525632.png" srcset="/img/loading.gif" lazyload alt="image-20230313170203733"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131525337.png" srcset="/img/loading.gif" lazyload alt="image-20230313170349992"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131525223.png" srcset="/img/loading.gif" lazyload alt="image-20230313170439656"></p>
+<h3 id="DQL语句"><a href="#DQL语句" class="headerlink" title="DQL语句"></a>DQL语句</h3><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131526982.png" srcset="/img/loading.gif" lazyload alt="image-20230313170812430"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131526805.png" srcset="/img/loading.gif" lazyload alt="image-20230313182101046"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131526419.png" srcset="/img/loading.gif" lazyload alt="image-20230313182302311"></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">IS</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-comment">--不空</span><br></code></pre></td></tr></table></figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131526055.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313182815300" />
-<figcaption aria-hidden="true">image-20230313182815300</figcaption>
-</figure>
+
+
+
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131526055.png" srcset="/img/loading.gif" lazyload alt="image-20230313182815300"></p>
 <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs 1c"><span class="hljs-literal">null</span>是不会被聚合函数计算的<br></code></pre></td></tr></table></figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131527738.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313183603511" />
-<figcaption aria-hidden="true">image-20230313183603511</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131527385.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313183401961" />
-<figcaption aria-hidden="true">image-20230313183401961</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131527790.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313183753038" />
-<figcaption aria-hidden="true">image-20230313183753038</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131528934.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313184130884" />
-<figcaption aria-hidden="true">image-20230313184130884</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131528673.png" srcset="/img/loading.gif" lazyload
-alt="image-20230313184431291" />
-<figcaption aria-hidden="true">image-20230313184431291</figcaption>
-</figure>
-<h3 id="dcl语句">DCL语句</h3>
-<p>用来管理哪些用户可以访问哪些数据库的权限。</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131528653.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314132612320" />
-<figcaption aria-hidden="true">image-20230314132612320</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131528237.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314132634430" />
-<figcaption aria-hidden="true">image-20230314132634430</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131528635.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314132946733" />
-<figcaption aria-hidden="true">image-20230314132946733</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131528466.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314133053891" />
-<figcaption aria-hidden="true">image-20230314133053891</figcaption>
-</figure>
+
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131527738.png" srcset="/img/loading.gif" lazyload alt="image-20230313183603511"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131527385.png" srcset="/img/loading.gif" lazyload alt="image-20230313183401961"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131527790.png" srcset="/img/loading.gif" lazyload alt="image-20230313183753038"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131528934.png" srcset="/img/loading.gif" lazyload alt="image-20230313184130884"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131528673.png" srcset="/img/loading.gif" lazyload alt="image-20230313184431291"></p>
+<h3 id="DCL语句"><a href="#DCL语句" class="headerlink" title="DCL语句"></a>DCL语句</h3><p>用来管理哪些用户可以访问哪些数据库的权限。</p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131528653.png" srcset="/img/loading.gif" lazyload alt="image-20230314132612320"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131528237.png" srcset="/img/loading.gif" lazyload alt="image-20230314132634430"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131528635.png" srcset="/img/loading.gif" lazyload alt="image-20230314132946733"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131528466.png" srcset="/img/loading.gif" lazyload alt="image-20230314133053891"></p>
 <figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc">需要指定所有数据库的所有表时使用<span class="hljs-strong">*.*</span><br>多个权限使用,分隔<br></code></pre></td></tr></table></figure>
-<h2 id="函数">函数</h2>
-<h3 id="字符串函数">字符串函数</h3>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131529320.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314133452136" />
-<figcaption aria-hidden="true">image-20230314133452136</figcaption>
-</figure>
-<h3 id="数值函数">数值函数</h3>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131529111.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314133834871" />
-<figcaption aria-hidden="true">image-20230314133834871</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131529239.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314134027636" />
-<figcaption aria-hidden="true">image-20230314134027636</figcaption>
-</figure>
-<h3 id="日期函数">日期函数</h3>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131529001.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314134222466" />
-<figcaption aria-hidden="true">image-20230314134222466</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131529855.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314134424145" />
-<figcaption aria-hidden="true">image-20230314134424145</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131529115.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314134554989" />
-<figcaption aria-hidden="true">image-20230314134554989</figcaption>
-</figure>
-<h3 id="流程函数">流程函数</h3>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131531885.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314134800556" />
-<figcaption aria-hidden="true">image-20230314134800556</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131531438.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314135000775" />
-<figcaption aria-hidden="true">image-20230314135000775</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131531980.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314135130951" />
-<figcaption aria-hidden="true">image-20230314135130951</figcaption>
-</figure>
-<h2 id="约束">约束</h2>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131531734.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314152119360" />
-<figcaption aria-hidden="true">image-20230314152119360</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131532200.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314152250885" />
-<figcaption aria-hidden="true">image-20230314152250885</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131533132.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314152326651" />
-<figcaption aria-hidden="true">image-20230314152326651</figcaption>
-</figure>
-<h3 id="外键约束">外键约束</h3>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131534131.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314152907470" />
-<figcaption aria-hidden="true">image-20230314152907470</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131534296.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314153149516" />
-<figcaption aria-hidden="true">image-20230314153149516</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131534617.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314153448986" />
-<figcaption aria-hidden="true">image-20230314153448986</figcaption>
-</figure>
-<h2 id="多表查询">多表查询</h2>
-<h3 id="多表关系">多表关系</h3>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131534093.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314153903452" />
-<figcaption aria-hidden="true">image-20230314153903452</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131534509.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314154012864" />
-<figcaption aria-hidden="true">image-20230314154012864</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131535059.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314154211394" />
-<figcaption aria-hidden="true">image-20230314154211394</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131535702.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314154338690" />
-<figcaption aria-hidden="true">image-20230314154338690</figcaption>
-</figure>
-<h3 id="多表查询-1">多表查询</h3>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131535225.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314154612572" />
-<figcaption aria-hidden="true">image-20230314154612572</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131535729.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314154838956" />
-<figcaption aria-hidden="true">image-20230314154838956</figcaption>
-</figure>
-<h3 id="内连接">内连接</h3>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131535244.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314154951114" />
-<figcaption aria-hidden="true">image-20230314154951114</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131536905.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314155100394" />
-<figcaption aria-hidden="true">image-20230314155100394</figcaption>
-</figure>
-<h3 id="外连接">外连接</h3>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131536624.png" srcset="/img/loading.gif" lazyload
-alt="image-20230314155206451" />
-<figcaption aria-hidden="true">image-20230314155206451</figcaption>
-</figure>
-<h3 id="自连接">自连接</h3>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131536073.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315124336169" />
-<figcaption aria-hidden="true">image-20230315124336169</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131536004.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315124554907" />
-<figcaption aria-hidden="true">image-20230315124554907</figcaption>
-</figure>
-<h3 id="联合查询">联合查询</h3>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131537528.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315124920355" />
-<figcaption aria-hidden="true">image-20230315124920355</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131537754.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315124644081" />
-<figcaption aria-hidden="true">image-20230315124644081</figcaption>
-</figure>
+
+
+
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><h3 id="字符串函数"><a href="#字符串函数" class="headerlink" title="字符串函数"></a>字符串函数</h3><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131529320.png" srcset="/img/loading.gif" lazyload alt="image-20230314133452136"></p>
+<h3 id="数值函数"><a href="#数值函数" class="headerlink" title="数值函数"></a>数值函数</h3><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131529111.png" srcset="/img/loading.gif" lazyload alt="image-20230314133834871"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131529239.png" srcset="/img/loading.gif" lazyload alt="image-20230314134027636"></p>
+<h3 id="日期函数"><a href="#日期函数" class="headerlink" title="日期函数"></a>日期函数</h3><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131529001.png" srcset="/img/loading.gif" lazyload alt="image-20230314134222466"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131529855.png" srcset="/img/loading.gif" lazyload alt="image-20230314134424145"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131529115.png" srcset="/img/loading.gif" lazyload alt="image-20230314134554989"></p>
+<h3 id="流程函数"><a href="#流程函数" class="headerlink" title="流程函数"></a>流程函数</h3><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131531885.png" srcset="/img/loading.gif" lazyload alt="image-20230314134800556"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131531438.png" srcset="/img/loading.gif" lazyload alt="image-20230314135000775"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131531980.png" srcset="/img/loading.gif" lazyload alt="image-20230314135130951"></p>
+<h2 id="约束"><a href="#约束" class="headerlink" title="约束"></a>约束</h2><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131531734.png" srcset="/img/loading.gif" lazyload alt="image-20230314152119360"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131532200.png" srcset="/img/loading.gif" lazyload alt="image-20230314152250885"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131533132.png" srcset="/img/loading.gif" lazyload alt="image-20230314152326651"></p>
+<h3 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h3><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131534131.png" srcset="/img/loading.gif" lazyload alt="image-20230314152907470"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131534296.png" srcset="/img/loading.gif" lazyload alt="image-20230314153149516"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131534617.png" srcset="/img/loading.gif" lazyload alt="image-20230314153448986"></p>
+<h2 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h2><h3 id="多表关系"><a href="#多表关系" class="headerlink" title="多表关系"></a>多表关系</h3><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131534093.png" srcset="/img/loading.gif" lazyload alt="image-20230314153903452"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131534509.png" srcset="/img/loading.gif" lazyload alt="image-20230314154012864"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131535059.png" srcset="/img/loading.gif" lazyload alt="image-20230314154211394"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131535702.png" srcset="/img/loading.gif" lazyload alt="image-20230314154338690"></p>
+<h3 id="多表查询-1"><a href="#多表查询-1" class="headerlink" title="多表查询"></a>多表查询</h3><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131535225.png" srcset="/img/loading.gif" lazyload alt="image-20230314154612572"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131535729.png" srcset="/img/loading.gif" lazyload alt="image-20230314154838956"></p>
+<h3 id="内连接"><a href="#内连接" class="headerlink" title="内连接"></a>内连接</h3><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131535244.png" srcset="/img/loading.gif" lazyload alt="image-20230314154951114"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131536905.png" srcset="/img/loading.gif" lazyload alt="image-20230314155100394"></p>
+<h3 id="外连接"><a href="#外连接" class="headerlink" title="外连接"></a>外连接</h3><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131536624.png" srcset="/img/loading.gif" lazyload alt="image-20230314155206451"></p>
+<h3 id="自连接"><a href="#自连接" class="headerlink" title="自连接"></a>自连接</h3><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131536073.png" srcset="/img/loading.gif" lazyload alt="image-20230315124336169"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131536004.png" srcset="/img/loading.gif" lazyload alt="image-20230315124554907"></p>
+<h3 id="联合查询"><a href="#联合查询" class="headerlink" title="联合查询"></a>联合查询</h3><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131537528.png" srcset="/img/loading.gif" lazyload alt="image-20230315124920355"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131537754.png" srcset="/img/loading.gif" lazyload alt="image-20230315124644081"></p>
 <figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs ada">去掉<span class="hljs-keyword">all</span>关键字可以实现去重<br>要求两个查询的字段列表一致<br></code></pre></td></tr></table></figure>
-<h3 id="子查询">子查询</h3>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131537842.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315125057468" />
-<figcaption aria-hidden="true">image-20230315125057468</figcaption>
-</figure>
-<h4 id="标量子查询">标量子查询</h4>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131537673.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315125349350" />
-<figcaption aria-hidden="true">image-20230315125349350</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202309241112131.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315125418893" />
-<figcaption aria-hidden="true">image-20230315125418893</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202309241112958.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315125426094" />
-<figcaption aria-hidden="true">image-20230315125426094</figcaption>
-</figure>
-<h4 id="列子查询">列子查询</h4>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131538505.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315130443380" />
-<figcaption aria-hidden="true">image-20230315130443380</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131538454.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315130549346" />
-<figcaption aria-hidden="true">image-20230315130549346</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131538770.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315130641950" />
-<figcaption aria-hidden="true">image-20230315130641950</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131538536.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315130758476" />
-<figcaption aria-hidden="true">image-20230315130758476</figcaption>
-</figure>
-<h4 id="行子查询">行子查询</h4>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131538894.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315130848904" />
-<figcaption aria-hidden="true">image-20230315130848904</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131539386.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315130957824" />
-<figcaption aria-hidden="true">image-20230315130957824</figcaption>
-</figure>
-<h4 id="表子查询">表子查询</h4>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131539572.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315131037508" />
-<figcaption aria-hidden="true">image-20230315131037508</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131539109.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315131901050" />
-<figcaption aria-hidden="true">image-20230315131901050</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131539408.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315131931799" />
-<figcaption aria-hidden="true">image-20230315131931799</figcaption>
-</figure>
-<h3 id="事务">事务</h3>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131539934.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315132302069" />
-<figcaption aria-hidden="true">image-20230315132302069</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131540105.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315132442715" />
-<figcaption aria-hidden="true">image-20230315132442715</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131540919.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315132656710" />
-<figcaption aria-hidden="true">image-20230315132656710</figcaption>
-</figure>
-<h4 id="事务的四大特性">事务的四大特性</h4>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131540405.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315132909165" />
-<figcaption aria-hidden="true">image-20230315132909165</figcaption>
-</figure>
-<h4 id="并发事务引发的问题">并发事务引发的问题</h4>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131540909.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315132950947" />
-<figcaption aria-hidden="true">image-20230315132950947</figcaption>
-</figure>
-<h4 id="事务隔离级别">事务隔离级别</h4>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131540410.png" srcset="/img/loading.gif" lazyload
-alt="image-20230315133738335" />
-<figcaption aria-hidden="true">image-20230315133738335</figcaption>
-</figure>
-<h2 id="mysql-存储引擎">MYSQL 存储引擎</h2>
-<p>mysql的体系结构分为：</p>
+
+
+
+<h3 id="子查询"><a href="#子查询" class="headerlink" title="子查询"></a>子查询</h3><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131537842.png" srcset="/img/loading.gif" lazyload alt="image-20230315125057468"></p>
+<h4 id="标量子查询"><a href="#标量子查询" class="headerlink" title="标量子查询"></a>标量子查询</h4><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131537673.png" srcset="/img/loading.gif" lazyload alt="image-20230315125349350"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202309241112131.png" srcset="/img/loading.gif" lazyload alt="image-20230315125418893"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202309241112958.png" srcset="/img/loading.gif" lazyload alt="image-20230315125426094"></p>
+<h4 id="列子查询"><a href="#列子查询" class="headerlink" title="列子查询"></a>列子查询</h4><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131538505.png" srcset="/img/loading.gif" lazyload alt="image-20230315130443380"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131538454.png" srcset="/img/loading.gif" lazyload alt="image-20230315130549346"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131538770.png" srcset="/img/loading.gif" lazyload alt="image-20230315130641950"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131538536.png" srcset="/img/loading.gif" lazyload alt="image-20230315130758476"></p>
+<h4 id="行子查询"><a href="#行子查询" class="headerlink" title="行子查询"></a>行子查询</h4><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131538894.png" srcset="/img/loading.gif" lazyload alt="image-20230315130848904"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131539386.png" srcset="/img/loading.gif" lazyload alt="image-20230315130957824"></p>
+<h4 id="表子查询"><a href="#表子查询" class="headerlink" title="表子查询"></a>表子查询</h4><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131539572.png" srcset="/img/loading.gif" lazyload alt="image-20230315131037508"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131539109.png" srcset="/img/loading.gif" lazyload alt="image-20230315131901050"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131539408.png" srcset="/img/loading.gif" lazyload alt="image-20230315131931799"></p>
+<h3 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h3><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131539934.png" srcset="/img/loading.gif" lazyload alt="image-20230315132302069"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131540105.png" srcset="/img/loading.gif" lazyload alt="image-20230315132442715"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131540919.png" srcset="/img/loading.gif" lazyload alt="image-20230315132656710"></p>
+<h4 id="事务的四大特性"><a href="#事务的四大特性" class="headerlink" title="事务的四大特性"></a>事务的四大特性</h4><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131540405.png" srcset="/img/loading.gif" lazyload alt="image-20230315132909165"></p>
+<h4 id="并发事务引发的问题"><a href="#并发事务引发的问题" class="headerlink" title="并发事务引发的问题"></a>并发事务引发的问题</h4><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131540909.png" srcset="/img/loading.gif" lazyload alt="image-20230315132950947"></p>
+<h4 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h4><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131540410.png" srcset="/img/loading.gif" lazyload alt="image-20230315133738335"></p>
+<h2 id="MYSQL-存储引擎"><a href="#MYSQL-存储引擎" class="headerlink" title="MYSQL 存储引擎"></a>MYSQL 存储引擎</h2><p>mysql的体系结构分为：</p>
 <ul>
 <li>连接层（用户权限校验，最大链接数的）</li>
 <li>服务层（DML，DDL语句，查询优化器）</li>
 <li>引擎层（5以后的版本InnoDB为默认版本，<strong>索引</strong>在该层实现）</li>
 <li>存储层（实际的存储）</li>
 </ul>
-<p>存储引擎是存储数据，建立索引，更新/查询数据技术的实现方式，存储引擎基于表而不是库，也可以称为表类型。</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131541524.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131541588.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h3 id="innodb引擎">InnoDB引擎</h3>
-<p>兼顾高性能和高可靠性，支持事务，行级锁，外健。每一张使用InnDOB引擎存储的表都对应一个xxx.ibd文件。每个文件存储了表的结构，数据，和索引。</p>
-<p>InnoDB的存储结构为表空间--段--页（一条一条数据）--行</p>
-<h3 id="myisam引擎">MYISAM引擎</h3>
-<p>MySql早期默认引擎，不支持事务，外健；支持行锁不支持列锁，访问速度快。</p>
-<h3 id="memory存储引擎">Memory存储引擎</h3>
-<p>访问速度快，支持哈希索引，但受断电影响。</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131541224.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h3 id="存储引擎的选择">存储引擎的选择</h3>
-<p>选InnoDB，MEMORY存储引擎的场景使用Redis可以很好的替代；MyISAM存储引擎的使用场景一般被芒果DB来替代。</p>
-<h2 id="索引">索引</h2>
-<p>优点：提高查找速度，降低IO，提高排序效率</p>
+<p>存储引擎是存储数据，建立索引，更新&#x2F;查询数据技术的实现方式，存储引擎基于表而不是库，也可以称为表类型。</p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131541524.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131541588.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="InnoDB引擎"><a href="#InnoDB引擎" class="headerlink" title="InnoDB引擎"></a>InnoDB引擎</h3><p>兼顾高性能和高可靠性，支持事务，行级锁，外健。每一张使用InnDOB引擎存储的表都对应一个xxx.ibd文件。每个文件存储了表的结构，数据，和索引。</p>
+<p>InnoDB的存储结构为表空间–段–页（一条一条数据）–行</p>
+<h3 id="MYISAM引擎"><a href="#MYISAM引擎" class="headerlink" title="MYISAM引擎"></a>MYISAM引擎</h3><p>MySql早期默认引擎，不支持事务，外健；支持行锁不支持列锁，访问速度快。</p>
+<h3 id="Memory存储引擎"><a href="#Memory存储引擎" class="headerlink" title="Memory存储引擎"></a>Memory存储引擎</h3><p>访问速度快，支持哈希索引，但受断电影响。</p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131541224.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="存储引擎的选择"><a href="#存储引擎的选择" class="headerlink" title="存储引擎的选择"></a>存储引擎的选择</h3><p>选InnoDB，MEMORY存储引擎的场景使用Redis可以很好的替代；MyISAM存储引擎的使用场景一般被芒果DB来替代。</p>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>优点：提高查找速度，降低IO，提高排序效率</p>
 <p>缺点：空间，降低增删改的效率</p>
-<h3 id="索引的数据结构">索引的数据结构</h3>
-<p>MySql的索引在存储引擎层实现，不同的存储引擎有不同的结构。常见的是B+树，哈希索引，R-tree空间索引（地理空间数据），Full-text（全文索引，和ES一个性质）</p>
-<h3 id="b树索引">B+树索引</h3>
-<p>B树的引入，红黑树在面对数据量较大时仍然存在树的深度较深的情况，因此引入了B树。B树一个节点允许存在多个子节点。</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131541759.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<h3 id="索引的数据结构"><a href="#索引的数据结构" class="headerlink" title="索引的数据结构"></a>索引的数据结构</h3><p>MySql的索引在存储引擎层实现，不同的存储引擎有不同的结构。常见的是B+树，哈希索引，R-tree空间索引（地理空间数据），Full-text（全文索引，和ES一个性质）</p>
+<h3 id="B-树索引"><a href="#B-树索引" class="headerlink" title="B+树索引"></a>B+树索引</h3><p>B树的引入，红黑树在面对数据量较大时仍然存在树的深度较深的情况，因此引入了B树。B树一个节点允许存在多个子节点。</p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131541759.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <p>B+树是在B树的基础之上，做了两点改进</p>
 <ul>
 <li>所有元素都出现在叶子节点</li>
 <li>叶子节点通过一条链表连接</li>
 </ul>
 <p>mysql在B+树之上又多维护了一个指针，指向相邻叶子节点</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131542038.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h3 id="hash索引">hash索引</h3>
-<p>查询效率高，但是不支持范围查询，也没法利用索引进行排序。</p>
-<h3 id="索引分类">索引分类</h3>
-<p>有四种常见的索引</p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131542038.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="hash索引"><a href="#hash索引" class="headerlink" title="hash索引"></a>hash索引</h3><p>查询效率高，但是不支持范围查询，也没法利用索引进行排序。</p>
+<h3 id="索引分类"><a href="#索引分类" class="headerlink" title="索引分类"></a>索引分类</h3><p>有四种常见的索引</p>
 <ul>
 <li>主键索引：自动创建，一张表只能有一个，primary关键字指定</li>
 <li>唯一索引：使用unique关键字创建</li>
@@ -851,17 +524,11 @@ alt="img" />
 <li>二级索引：可以有可以没有</li>
 </ul>
 <p>聚集索引的叶子节点挂了完整的一行数据，二级索引的节点则挂了作为二级索引的键值</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131542173.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h3 id="索引的操作语法">索引的操作语法</h3>
-<ul>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131542173.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="索引的操作语法"><a href="#索引的操作语法" class="headerlink" title="索引的操作语法"></a>索引的操作语法</h3><ul>
 <li>索引的创建语法</li>
 </ul>
-<p>create [unique,fulltext] index on table(col_name1,col_name2...);</p>
+<p>create [unique,fulltext] index on table(col_name1,col_name2…);</p>
 <ul>
 <li>索引的查看</li>
 </ul>
@@ -869,54 +536,47 @@ alt="img" />
 <ul>
 <li>索引的删除</li>
 </ul>
-<p>​ drop index ind1 on table;</p>
-<h3 id="sql性能分析">SQL性能分析</h3>
-<ul>
+<p>​      drop index ind1 on table;</p>
+<h3 id="SQL性能分析"><a href="#SQL性能分析" class="headerlink" title="SQL性能分析"></a>SQL性能分析</h3><ul>
 <li>SQL执行频率 查看增删改查在该数据库的频率</li>
 </ul>
-<p>show global status like "Com_______";</p>
-<p>​ 如果发现查询请求占大部分，则需要考虑做SQL优化；</p>
+<p>show global status like “Com_______”;</p>
+<p>​      如果发现查询请求占大部分，则需要考虑做SQL优化；</p>
 <ul>
 <li>开启慢查询日志(重启失效)</li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//慢查询是否开启</span><br>show variables like <span class="hljs-string">&quot;slow_query_log&quot;</span>;<br><span class="hljs-comment">//多长的查询时间会记录为慢查询</span><br>SHOW VARIABLES LIKE <span class="hljs-string">&#x27;long_query_time&#x27;</span>;<br><span class="hljs-comment">//修改该查询时间</span><br>SET GLOBAL long_query_time = <span class="hljs-number">2</span>;<br><span class="hljs-comment">//输出日志目录</span><br>SHOW VARIABLES LIKE <span class="hljs-string">&#x27;slow_query_log_file&#x27;</span>;<br></code></pre></td></tr></table></figure>
+
 <ul>
-<li>profile 查看SQL时间都耗费到哪里了(重启失效)</li>
+<li>profile  查看SQL时间都耗费到哪里了(重启失效)</li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">//是否支持profile</span><br>select @@have_profiling;<br><span class="hljs-comment">//是否开启profile</span><br>select @@profiling;<br><span class="hljs-comment">//开启</span><br>set profiling = <span class="hljs-number">1</span>;<br><span class="hljs-comment">//查看当前回话所有sql时间</span><br>show profiles;<br><span class="hljs-comment">//查询某条查询记录详细时间消耗</span><br>show profile <span class="hljs-keyword">for</span> query <span class="hljs-number">6</span>;<br><span class="hljs-comment">//查询某条记录cpu详细时间消耗</span><br>show profile cpu <span class="hljs-keyword">for</span> query <span class="hljs-number">6</span>;<br></code></pre></td></tr></table></figure>
+
 <ul>
 <li>explain查询sql语句的执行计划</li>
 </ul>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs cpp">explain + 具体的sql语句;<br></code></pre></td></tr></table></figure>
+
 <p>id:值越大越先执行，值相同从上到下。</p>
 <p>type:表示连接类型，性能从好到差排序为(NULL,ystem,const，eq_ref,ref,range,index,all)</p>
 <p>possible_key:这张表可能用的索引</p>
 <p>key:实际使用的索引</p>
 <p>rows:mysql认为必须要执行查询的行数，是一个估计值</p>
 <p>filtered:表示返回结果的行数占需读取行数的百分比，越大越好</p>
-<h3 id="索引使用原则">索引使用原则</h3>
-<ul>
+<h3 id="索引使用原则"><a href="#索引使用原则" class="headerlink" title="索引使用原则"></a>索引使用原则</h3><ul>
 <li>最左前缀法则：在索引了多列的情况下（联合索引），如果希望索引生效，则联合索引最左边的字段必须存在；如果某个索引字段被跳过，则后边的部分失效。</li>
-<li>范围查询：在联合索引的条件下，如果出现了&lt; or &gt;
-的范围索引，则排在该字段后边的索引失效；可以使用&gt;= ,&lt;=规避</li>
+<li>范围查询：在联合索引的条件下，如果出现了&lt; or &gt; 的范围索引，则排在该字段后边的索引失效；可以使用&gt;&#x3D; ,&lt;&#x3D;规避</li>
 <li>索引列运算：对索引列运算（例如使用substring查询手机号码结尾为15的用户）会导致索引失效</li>
-<li>查询字符串不加''会导致索引失效</li>
+<li>查询字符串不加’’会导致索引失效</li>
 <li>模糊查询时，如果对字段尾进行模糊匹配索引不会失效，如果对头部进行了模糊匹配，索引会失效</li>
 <li>or连接时，如果条件列有任意一方没有索引的话，则索引失效</li>
 <li>数据分布影响：如果mysql判断走索引更慢，则不会走索引（例如查询全表）</li>
 <li>查询时尽量使用覆盖索引（查询使用了索引，且返回的列都在索引中)</li>
-<li>对于使用varchar或者text类型的字段使用前缀索引 create index idx_name
-on stduent(name(n));</li>
+<li>对于使用varchar或者text类型的字段使用前缀索引 create index idx_name on stduent(name(n));</li>
 <li>创建联合索引时要考虑创建顺序，使用频率高的应该在最左边；联合索引的key存储了所有的字段</li>
 </ul>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131542722.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h3 id="sql提示">SQL提示</h3>
-<p>建议/强制 优化器使用什么样的索引</p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131542722.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h3 id="SQL提示"><a href="#SQL提示" class="headerlink" title="SQL提示"></a>SQL提示</h3><p>建议&#x2F;强制 优化器使用什么样的索引</p>
 <ul>
 <li>use index()</li>
 <li>ignore index()</li>
@@ -924,159 +584,69 @@ alt="img" />
 </ul>
 <p>select * from student use index(_idx) where xx;</p>
 <p>前两种形式MYSQL优化器有可能选择不执行</p>
-<h3 id="sql优化">SQL优化</h3>
-<h4 id="insert-优化">INSERT 优化</h4>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131542704.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<h3 id="SQL优化"><a href="#SQL优化" class="headerlink" title="SQL优化"></a>SQL优化</h3><h4 id="INSERT-优化"><a href="#INSERT-优化" class="headerlink" title="INSERT 优化"></a>INSERT 优化</h4><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131542704.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <p>一次性加载100万数据</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131542170.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131543486.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h4 id="主键优化">主键优化</h4>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131545924.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131542170.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131543486.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h4 id="主键优化"><a href="#主键优化" class="headerlink" title="主键优化"></a>主键优化</h4><p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131545924.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 <p>1.在满足业务需求的情况下，尽量降低主键长度（二级索引会存储主键）</p>
 <p>2.插入数据时尽量顺序插入（避免页分裂情况）</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131544553.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131544106.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131544850.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<p>3.主键尽量选择自增主键 ，业务尽量避免对主键的修改</p>
-<h4 id="order-by优化">ORDER BY优化</h4>
-<p>OEDER
-BY有两种情况，一种是扫描出所有的需要的数据，然后在缓冲区排序；另一种直接通过索引顺序返回。</p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131544553.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131544106.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131544850.png" srcset="/img/loading.gif" lazyload alt="img"> </p>
+<p>3.主键尽量选择自增主键  ，业务尽量避免对主键的修改</p>
+<h4 id="ORDER-BY优化"><a href="#ORDER-BY优化" class="headerlink" title="ORDER BY优化"></a>ORDER BY优化</h4><p>OEDER BY有两种情况，一种是扫描出所有的需要的数据，然后在缓冲区排序；另一种直接通过索引顺序返回。</p>
 <ul>
 <li>尽量使用覆盖索引</li>
 </ul>
-<h4 id="group-by优化">GROUP BY优化</h4>
-<p>使用索引</p>
-<h4 id="limit-分页查询优化">Limit 分页查询优化</h4>
-<p>随着起始页的增大，分页查询会越来越慢</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131544658.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h4 id="count优化">COUNT优化</h4>
-<p>COUNT就是很耗时，如果实在要优化的话结合redis进行优化。</p>
-<h4 id="updata优化">UPDATA优化</h4>
-<p>更新数据时更新的条件一定要有索引，如果更新的字段没有加索引的话，则会将整个表锁住，在事务提交以前其他对该表的索引都将被阻塞。</p>
-<h3 id="mysql锁">MYSQL锁</h3>
-<p>mysql有三种锁</p>
+<h4 id="GROUP-BY优化"><a href="#GROUP-BY优化" class="headerlink" title="GROUP BY优化"></a>GROUP BY优化</h4><p>使用索引</p>
+<h4 id="Limit-分页查询优化"><a href="#Limit-分页查询优化" class="headerlink" title="Limit 分页查询优化"></a>Limit 分页查询优化</h4><p>随着起始页的增大，分页查询会越来越慢</p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131544658.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h4 id="COUNT优化"><a href="#COUNT优化" class="headerlink" title="COUNT优化"></a>COUNT优化</h4><p>COUNT就是很耗时，如果实在要优化的话结合redis进行优化。</p>
+<h4 id="UPDATA优化"><a href="#UPDATA优化" class="headerlink" title="UPDATA优化"></a>UPDATA优化</h4><p>更新数据时更新的条件一定要有索引，如果更新的字段没有加索引的话，则会将整个表锁住，在事务提交以前其他对该表的索引都将被阻塞。</p>
+<h3 id="MYSQL锁"><a href="#MYSQL锁" class="headerlink" title="MYSQL锁"></a>MYSQL锁</h3><p>mysql有三种锁</p>
 <ul>
 <li>行锁</li>
 <li>表锁</li>
 <li>全局锁</li>
 </ul>
-<h4 id="全局锁">全局锁</h4>
-<p>加完锁之后整个数据库处于只读状态，DML，DDL语句，事务全部都会被阻塞。例如备份整个数据库。</p>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131544989.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131544653.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<h4 id="表级锁">表级锁</h4>
-<ul>
+<h4 id="全局锁"><a href="#全局锁" class="headerlink" title="全局锁"></a>全局锁</h4><p>加完锁之后整个数据库处于只读状态，DML，DDL语句，事务全部都会被阻塞。例如备份整个数据库。</p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131544989.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131544653.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<h4 id="表级锁"><a href="#表级锁" class="headerlink" title="表级锁"></a>表级锁</h4><ul>
 <li>表锁</li>
 </ul>
 <p>又分为表读锁以及表写锁；</p>
 <p>表写锁会允许当前客户端对表进行读和写，并阻塞其他客户端对表的读和写</p>
 <p>表读锁回允许当前客户端对表进行读，但是不允许写，并阻塞其他客户端的写</p>
 <p>表锁的语法</p>
-<p>lock table user read/write</p>
+<p>lock table user read&#x2F;write</p>
 <p>unlock table</p>
 <ul>
 <li>元数据锁</li>
 </ul>
-<p>元数据就是指的表结构；当表上存在活动的事务时会自动对表加上共享读/写锁，两者任一都会阻塞alter语句；直到事务提交完毕后，锁会自动释放。</p>
+<p>元数据就是指的表结构；当表上存在活动的事务时会自动对表加上共享读&#x2F;写锁，两者任一都会阻塞alter语句；直到事务提交完毕后，锁会自动释放。</p>
 <ul>
 <li>意向锁</li>
 </ul>
-<p>假如某张表的行已经存在了锁，这时候如果另一个客户端要加表锁，需要对每一行的数据判断是否存在锁，是否可以上表锁，这<strong>很浪费时间</strong>；在执行select（lock
-in shard
-model），insert，update，delete语句时会自动对表加上共享锁；直接通过意向锁来判断是否可以加表锁；</p>
+<p>假如某张表的行已经存在了锁，这时候如果另一个客户端要加表锁，需要对每一行的数据判断是否存在锁，是否可以上表锁，这<strong>很浪费时间</strong>；在执行select（lock in shard model），insert，update，delete语句时会自动对表加上共享锁；直接通过意向锁来判断是否可以加表锁；</p>
 <p>意向锁分为两种，意向共享锁（select），意向拍他锁；</p>
 <ul>
 <li>意向共享锁：与表读锁兼容，与表写锁互斥；</li>
 <li>意向排它锁：与表读锁，写锁都互斥；</li>
 </ul>
-<h4 id="行锁">行锁</h4>
-<p>MYSQL支持四种隔离级别：</p>
+<h4 id="行锁"><a href="#行锁" class="headerlink" title="行锁"></a>行锁</h4><p>MYSQL支持四种隔离级别：</p>
 <p>MySQL支持四种隔离级别，分别是：</p>
-<ol type="1">
-<li>读未提交（Read
-Uncommitted）：最低的隔离级别，允许一个事务读取另一个事务未提交的数据。这种隔离级别可能会导致脏读（Dirty
-Read）和不可重复读（Non-repeatable Read）问题。</li>
-<li>读已提交（Read
-Committed）：允许一个事务只能读取另一个事务已提交的数据。这种隔离级别可以避免脏读，但仍然可能出现不可重复读和幻读（Phantom
-Read）问题。</li>
-<li>可重复读（Repeatable
-Read）：保证在同一个事务中多次读取同一数据时，结果始终一致。在这个级别下，MySQL使用锁来避免不可重复读和幻读问题。</li>
+<ol>
+<li>读未提交（Read Uncommitted）：最低的隔离级别，允许一个事务读取另一个事务未提交的数据。这种隔离级别可能会导致脏读（Dirty Read）和不可重复读（Non-repeatable Read）问题。</li>
+<li>读已提交（Read Committed）：允许一个事务只能读取另一个事务已提交的数据。这种隔离级别可以避免脏读，但仍然可能出现不可重复读和幻读（Phantom Read）问题。</li>
+<li>可重复读（Repeatable Read）：保证在同一个事务中多次读取同一数据时，结果始终一致。在这个级别下，MySQL使用锁来避免不可重复读和幻读问题。</li>
 <li>串行化（Serializable）：最高的隔离级别，通过强制事务串行执行来避免并发问题。在这个级别下，MySQL会对所有读取的数据进行加锁，避免任何并发问题。</li>
 </ol>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131543787.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131543956.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131543885.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
-<figure>
-<img
-src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131543070.png" srcset="/img/loading.gif" lazyload
-alt="img" />
-<figcaption aria-hidden="true">img</figcaption>
-</figure>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131543787.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131543956.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131543885.png" srcset="/img/loading.gif" lazyload alt="img"></p>
+<p><img src="https://raw.githubusercontent.com/ShuaiZhang1998/figure/main/figure/202307131543070.png" srcset="/img/loading.gif" lazyload alt="img"></p>
 
                 
               </div>
