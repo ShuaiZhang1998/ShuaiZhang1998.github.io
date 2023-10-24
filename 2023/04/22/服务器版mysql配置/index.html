@@ -274,27 +274,23 @@
               <div class="markdown-body">
                 
                 <p><strong>Ubuntu</strong>: 18.04</p>
-<p><strong>问题</strong>：直接输入sudo apt install mysql-server安装的mysql5.x的版本</p>
+<p><strong>问题</strong>：直接输入sudo apt install
+mysql-server安装的mysql5.x的版本</p>
 <p><strong>完全卸载MySQL</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get autoremove --purge mysql-server<br>sudo apt-get remove mysql-server<br>sudo apt-get autoremove mysql-server<br>sudo apt-get remove mysql-common<br>dpkg -l |grep ^rc|awk ‘&#123;print $2&#125;’ |sudo xargs dpkg -P<br></code></pre></td></tr></table></figure>
-
 <p><strong>更新</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get update<br>sudo apt-get upgrade<br></code></pre></td></tr></table></figure>
-
 <p><strong>下载</strong></p>
-<p><a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/">https://dev.mysql.com/downloads/</a></p>
-<p>找到community server，选择好版本点小企鹅<del>逆天真的，找半天</del>下载deb，传输到服务器上</p>
+<p>https://dev.mysql.com/downloads/</p>
+<p>找到community
+server，选择好版本点小企鹅<del>逆天真的，找半天</del>下载deb，传输到服务器上</p>
 <p>逆天操作：回车会一直卡，全选ok</p>
 <p><strong>更新</strong></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">sudo apt-get update<br>sudo apt-get install mysql-server <br><span class="hljs-meta prompt_"># </span><span class="language-bash">加密方式用传统</span><br></code></pre></td></tr></table></figure>
-
 <p><strong>其他操作</strong></p>
-<p><strong>放行3306端口</strong> <del>不愧是云耀裸机</del> </p>
+<p><strong>放行3306端口</strong> <del>不愧是云耀裸机</del></p>
 <p><strong>登陆数据库</strong></p>
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">use mysql;<br><span class="hljs-keyword">select</span> <span class="hljs-keyword">user</span>,host <span class="hljs-keyword">from</span> <span class="hljs-keyword">user</span>;<br><span class="hljs-keyword">update</span> <span class="hljs-keyword">user</span> <span class="hljs-keyword">set</span> host = &quot;%&quot; <span class="hljs-keyword">where</span> <span class="hljs-keyword">user</span> = &quot;root&quot;;<br>flush <span class="hljs-keyword">privileges</span>;<br></code></pre></td></tr></table></figure>
-
-
-
 
                 
               </div>
