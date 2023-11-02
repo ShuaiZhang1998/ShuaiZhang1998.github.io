@@ -16,12 +16,12 @@
   <meta name="author" content="Zs">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言最近由于在写cs144的lab一直在和vim打交道，然后就诞生出了一个莫名其妙的需求，如何从服务器的vim中复制到我本地的剪贴板上？然后我搜索到了 1ggvG+y  没错，这东西根本没用啊，它是复制到了服务器本地的寄存器上…然后发现了这篇神奇的文章 https:&#x2F;&#x2F;flogx.com&#x2F;post&#x2F;vim-remote-copy&#x2F; 修改本机ssh设置1vim ~&#x2F;.ssh&#x2F;config  然后添加">
+    <meta name="description" content="前言 最近由于在写cs144的lab一直在和vim打交道，然后就诞生出了一个莫名其妙的需求，如何从服务器的vim中复制到我本地的剪贴板上？然后我搜索到了 1ggvG+y 没错，这东西根本没用啊，它是复制到了服务器本地的寄存器上...然后发现了这篇神奇的文章 https:&#x2F;&#x2F;flogx.com&#x2F;post&#x2F;vim-remote-copy&#x2F; 修改本机ssh设置 1vim ~&#x2F;.ssh&#x2F;config 然后">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vim远程拷贝">
 <meta property="og:url" content="http://shuaizhang1998.github.io/2023/06/20/vim%E8%BF%9C%E7%A8%8B%E6%8B%B7%E8%B4%9D/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="前言最近由于在写cs144的lab一直在和vim打交道，然后就诞生出了一个莫名其妙的需求，如何从服务器的vim中复制到我本地的剪贴板上？然后我搜索到了 1ggvG+y  没错，这东西根本没用啊，它是复制到了服务器本地的寄存器上…然后发现了这篇神奇的文章 https:&#x2F;&#x2F;flogx.com&#x2F;post&#x2F;vim-remote-copy&#x2F; 修改本机ssh设置1vim ~&#x2F;.ssh&#x2F;config  然后添加">
+<meta property="og:description" content="前言 最近由于在写cs144的lab一直在和vim打交道，然后就诞生出了一个莫名其妙的需求，如何从服务器的vim中复制到我本地的剪贴板上？然后我搜索到了 1ggvG+y 没错，这东西根本没用啊，它是复制到了服务器本地的寄存器上...然后发现了这篇神奇的文章 https:&#x2F;&#x2F;flogx.com&#x2F;post&#x2F;vim-remote-copy&#x2F; 修改本机ssh设置 1vim ~&#x2F;.ssh&#x2F;config 然后">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-06-20T05:13:07.720Z">
 <meta property="article:modified_time" content="2023-07-13T08:29:01.842Z">
@@ -273,34 +273,31 @@
             
               <div class="markdown-body">
                 
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近由于在写cs144的lab一直在和vim打交道，然后就诞生出了一个莫名其妙的需求，如何从服务器的vim中复制到我本地的剪贴板上？然后我搜索到了</p>
+                <h1 id="前言">前言</h1>
+<p>最近由于在写cs144的lab一直在和vim打交道，然后就诞生出了一个莫名其妙的需求，如何从服务器的vim中复制到我本地的剪贴板上？然后我搜索到了</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ggvG+y<br></code></pre></td></tr></table></figure>
-
-<p>没错，这东西根本没用啊，它是复制到了服务器本地的寄存器上…然后发现了这篇神奇的文章</p>
-<p><a target="_blank" rel="noopener" href="https://flogx.com/post/vim-remote-copy/">https://flogx.com/post/vim-remote-copy/</a></p>
-<h2 id="修改本机ssh设置"><a href="#修改本机ssh设置" class="headerlink" title="修改本机ssh设置"></a>修改本机ssh设置</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim ~/.ssh/config<br></code></pre></td></tr></table></figure>
-
+<p>没错，这东西根本没用啊，它是复制到了服务器本地的寄存器上...然后发现了这篇神奇的文章</p>
+<p>https://flogx.com/post/vim-remote-copy/</p>
+<h2 id="修改本机ssh设置">修改本机ssh设置</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">vim ~/.ssh/config<br></code></pre></td></tr></table></figure>
 <p>然后添加如下内容</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">Host *<br>    RemoteForward 22222 127.0.0.1:22222<br></code></pre></td></tr></table></figure>
-
-<p>*<em>这段配置的意义是使用 SSH 登录任何主机时（Host <em>），将主机本地的 22222 端口（RemoteForward 22222）映射到远程主机的 127.0.0.1:22222 地址上。</em></em></p>
-<h2 id="修改服务器的Vim配置文件"><a href="#修改服务器的Vim配置文件" class="headerlink" title="修改服务器的Vim配置文件"></a>修改服务器的Vim配置文件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd ~<br>vim .vimrc<br></code></pre></td></tr></table></figure>
-
+<p>**这段配置的意义是使用 SSH 登录任何主机时（Host *），将主机本地的
+22222 端口（RemoteForward 22222）映射到远程主机的 127.0.0.1:22222
+地址上。**</p>
+<h2 id="修改服务器的vim配置文件">修改服务器的Vim配置文件</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">cd ~<br>vim .vimrc<br></code></pre></td></tr></table></figure>
 <p>然后添加如下内容</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs shell">function! s:send2net()<br>    let ch = ch_open(&#x27;127.0.0.1:22222&#x27;)<br>    if ch_status(ch) != &quot;open&quot;<br>        echomsg &quot;Failed to open channel, status = &quot; .. ch_status(sh)<br>    endif<br>    call ch_sendraw(ch, getreg(&#x27;&quot;&#x27;))<br>endfunction<br><br>augroup send2net<br>    au!<br>    au TextYankPost * if v:event.operator ==# &#x27;y&#x27; | call s:send2net() | endif<br>augroup END<br></code></pre></td></tr></table></figure>
-
 <p><strong>这段配置的意义是在触发vim的y（复制）操作时，将内容发送到本地的22222端口，在前边我们已经将本机和服务器的22222端口进行了绑定。</strong></p>
-<h2 id="配置mac系统"><a href="#配置mac系统" class="headerlink" title="配置mac系统"></a>配置mac系统</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">cat &gt; $HOME/Library/LaunchAgents/pbcopy.plist &lt;&lt; END<br></code></pre></td></tr></table></figure>
-
+<h2 id="配置mac系统">配置mac系统</h2>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">cat &gt; $HOME/Library/LaunchAgents/pbcopy.plist &lt;&lt; END<br></code></pre></td></tr></table></figure>
 <p>添加如下内容</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs shell">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;<br>&lt;!DOCTYPE plist PUBLIC &quot;-//Apple Computer//DTD PLIST 1.0//EN&quot; &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;<br>&lt;plist version=&quot;1.0&quot;&gt;<br>    &lt;dict&gt;<br>        &lt;key&gt;Label&lt;/key&gt;<br>            &lt;string&gt;localhost.pbcopy&lt;/string&gt;<br>        &lt;key&gt;ProgramArguments&lt;/key&gt;<br>        &lt;array&gt;<br>            &lt;string&gt;/usr/bin/pbcopy&lt;/string&gt;<br>        &lt;/array&gt;<br>        &lt;key&gt;inetdCompatibility&lt;/key&gt;<br>        &lt;dict&gt;<br>            &lt;key&gt;Wait&lt;/key&gt;<br>            &lt;false/&gt;<br>        &lt;/dict&gt;<br>        &lt;key&gt;Sockets&lt;/key&gt;<br>        &lt;dict&gt;<br>            &lt;key&gt;Listeners&lt;/key&gt;<br>            &lt;dict&gt;<br>                &lt;key&gt;SockServiceName&lt;/key&gt;<br>                &lt;string&gt;22222&lt;/string&gt;<br>                &lt;key&gt;SockNodeName&lt;/key&gt;<br>                &lt;string&gt;127.0.0.1&lt;/string&gt;<br>            &lt;/dict&gt;<br>        &lt;/dict&gt;<br>    &lt;/dict&gt;<br>&lt;/plist&gt;<br>END<br></code></pre></td></tr></table></figure>
-
 <p>加载配置</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">launchctl load -w $HOME/Library/LaunchAgents/pbcopy.plist<br></code></pre></td></tr></table></figure>
-
 <p>检查配置</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">launchctl list | grep localhost.pbcopy<br></code></pre></td></tr></table></figure>
-
 <p><strong>这段配置的意义就是监听本地22222端口的链接，并把数据复制到剪贴板中（pbcopy）。</strong></p>
 
                 
